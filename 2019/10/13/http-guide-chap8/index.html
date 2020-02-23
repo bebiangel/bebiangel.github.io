@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>HTTP 완벽가이드 8장 | 기록</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>기록하는 공간</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;전체
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/프론트/"
+            
+            
+            id="categories프론트">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;프론트
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/스터디/"
+            
+              rel="nofollow"
+            
+            
+            id="categories스터디">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;스터디
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          기록
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/프론트/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories프론트">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/스터디/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories스터디">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/프론트/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories프론트">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/스터디/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories스터디">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/10/13/http-guide-chap8/">
+        HTTP 완벽가이드 8장
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://bebiangel.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Jaewoo Han</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-13</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/스터디/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>스터디</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h1 id="8장-통합점-게이트웨이-터널-릴레이"><a href="#8장-통합점-게이트웨이-터널-릴레이" class="headerlink" title="8장 통합점: 게이트웨이, 터널, 릴레이"></a>8장 통합점: 게이트웨이, 터널, 릴레이</h1><h2 id="1-게이트웨이"><a href="#1-게이트웨이" class="headerlink" title="1. 게이트웨이"></a>1. 게이트웨이</h2><ul>
+<li>복잡한 리소스들을 한 개의 어플리케이션으로만 처리할 수 없다는 문제를 해결하기 위해서 만들었다.</li>
+<li>리소스와 애플리케이션을 연결하는 역할을 한다.</li>
+<li>요청을 받고 응답을 보내는 포털 같이 동작하는데, 동적인 콘텐츠를 생성하거나 데이터베이스에 질의를 보낼 수 있다.</li>
+<li>HTTP 트래픽을 다른 프로토콜로 자동으로 변환하여, HTTP 클라이언트가 다른 프로토콜을 알 필요 없이 서버에 접속할 수 있게 한다.</li>
+</ul>
+<h2 id="2-프로토콜-게이트웨이"><a href="#2-프로토콜-게이트웨이" class="headerlink" title="2. 프로토콜 게이트웨이"></a>2. 프로토콜 게이트웨이</h2><ul>
+<li>게이트웨에서 HTTP 트래픽을 바로 보낼 수 있다.</li>
+<li>브라우저에 명시적으로 게이트웨이를 설정하여 자연스럽게 트래픽이 게이트웨이를 거쳐가게 하거나, 게이트웨이를 대리 서버(리버스 프락시)로 설정할 수 있다.</li>
+</ul>
+<h2 id="3-리소스-게이트웨이"><a href="#3-리소스-게이트웨이" class="headerlink" title="3. 리소스 게이트웨이"></a>3. 리소스 게이트웨이</h2><ul>
+<li>일반적으로 애플리케이션 서버는 목적지 서버와 게이트웨이를 한 개의 서버로 결합한다.</li>
+</ul>
+<h3 id="3-1-공용-게이트웨이-인터페이스"><a href="#3-1-공용-게이트웨이-인터페이스" class="headerlink" title="3.1 공용 게이트웨이 인터페이스"></a>3.1 공용 게이트웨이 인터페이스</h3><ul>
+<li>공용 게이트웨이 인터페이스(CGI)는 최초의 서버 확장이자 지금까지도 가장 널리 쓰이는 서버 확장이다.</li>
+<li>CGI 애플리케이션이 서버와 분리되면서 다양한 언어로 구현되며, 거의 모든 HTTP서버가 지원한다.</li>
+<li>CGI가 내부에서 어떤 처리를 하는지 사용자에게 보이지 않고, 내부적으로 일반적인 요청을 만든다.</li>
+</ul>
+<h3 id="3-2-서버-확장-API"><a href="#3-2-서버-확장-API" class="headerlink" title="3.2 서버 확장 API"></a>3.2 서버 확장 API</h3><ul>
+<li>서버 개발자는 웹 개발자가 자신의 모듈을 HTTP와 직접 연결할 수 있는 강력한 인터페이스인 서버 확장 API를 제공한다.</li>
+<li>확장 API는 프로그래머가 자신의 코드를 서버에 연결하거나 서버의 컴포넌트를 자신이 만든 것으로 교체해버릴 수 있게 한다.</li>
+</ul>
+<h2 id="4-애플리케이션-인터페이스와-웹-서비스"><a href="#4-애플리케이션-인터페이스와-웹-서비스" class="headerlink" title="4. 애플리케이션 인터페이스와 웹 서비스"></a>4. 애플리케이션 인터페이스와 웹 서비스</h2><ul>
+<li>애플리케이션을 연결하면서 데이터를 교환하려는 두 애플리케이션 사이에서 프로토콜 인터페이스를 맞추는 일이 가장 까다로운 이슈이다.</li>
+<li>웹 애플리케이션이 서로 통신하는데 사용할 표준과 프로토콜 집합을 개발하였다.</li>
+<li>웹 서비스는 SOAP를 통해 XML을 사용하여 정보를 교환한다.</li>
+</ul>
+<h2 id="5-터널"><a href="#5-터널" class="headerlink" title="5. 터널"></a>5. 터널</h2><ul>
+<li>HTTP 프로토콜을 지원하지 않는 애플리케이션에 HTTP 애플리케이션을 사용해 접근하는 방법을 제공한다.</li>
+<li>HTTP 커넥션을 통해서 HTTP가 아닌 트래픽을 전송할 수 있고, 다른 프로토콜을 HTTP 위에 올릴 수 있다.</li>
+<li>주로 HTTP 커넥션 안에 HTTP가 아닌 트래픽을 얹기 위해서 사용한다.</li>
+</ul>
+<h3 id="5-1-CONNECT로-HTTP-터널-커넥션-맺기"><a href="#5-1-CONNECT로-HTTP-터널-커넥션-맺기" class="headerlink" title="5.1 CONNECT로 HTTP 터널 커넥션 맺기"></a>5.1 CONNECT로 HTTP 터널 커넥션 맺기</h3><ul>
+<li>웹 터널은 HTTP의 CONNECT 메서드를 사용해 커넥션을 맺는다.</li>
+<li>CONNECT 메서드는 터널 게이트웨이가 임의의 목적 서버와 포트에 TCP 커넥션을 맺고 클라이언트와 서버 간에 오는 데이터를 무조건 전달하기를 요청한다.</li>
+</ul>
+<p><strong><code>CONNECT 요청</code></strong></p>
+<ul>
+<li><p>시작줄을 제외하고는 다른 HTTP 메서드와 같다.</p>
+</li>
+<li><p>각 행은 CRLF로 끝나고, 헤더 목록의 끝은 빈 줄의 CRLF로 끝난다.</p>
+<p>  CONNECT home.netscape.com:443 HTTP/1.0<br>  User-agent: Mozilla/4.0</p>
+</li>
+</ul>
+<p><code>CONNECT 응답</code></p>
+<ul>
+<li><p>클라이언트는 요청을 전송한 다음, 게이트웨이의 응답을 기다린다.</p>
+</li>
+<li><p>커넥션이 메시지를 전달하는 대신 바이트를 그대로 전달하기 때문에 콘텐츠의 형식을 기술하는 <code>Content-Type</code> 헤더를 포함할 필요가 없다.</p>
+<p>  HTTP/1.0 200 Connection Established<br>  Proxy-agent: Netscape-Proxy/1.1</p>
+</li>
+</ul>
+<h3 id="5-2-데이터-터널링-시간-커넥션-관리"><a href="#5-2-데이터-터널링-시간-커넥션-관리" class="headerlink" title="5.2 데이터 터널링, 시간, 커넥션 관리"></a>5.2 데이터 터널링, 시간, 커넥션 관리</h3><ul>
+<li>터널을 통해 전달되는 데이터는 게이트웨이에서 볼 수 없어서, 게이트웨이는 패킷의 순서나 흐름에 대한 어떤 가정도 할 수 없다.</li>
+<li>게이트웨이는 커넥션이 맺어지는 대로 헤더를 포함해서 읽어들인 모든 데이터를 서버에 전송해야 한다.</li>
+<li>터널의 어느 부분이든 커넥션이 끊어지면, 그 곳으로부터 온 데이터는 반대편으로 전달되고, 그 다음 커넥션이 끊어졌던 터널의 끝단 반대편의 커넥션도 프락시에 의해서 끊어진다.</li>
+</ul>
+<h3 id="5-3-SSL-터널링"><a href="#5-3-SSL-터널링" class="headerlink" title="5.3 SSL 터널링"></a>5.3 SSL 터널링</h3><ul>
+<li>웹 터널은 방화벽을 통해서 암호화된 SSL 트래픽을 전달하려고 개발되었다.</li>
+<li>SSL 트래픽을 HTTP 커넥션으로 전송하여 80포트의 HTTP만을 허용하는 방화벽을 통과 시킨다.</li>
+</ul>
+<h3 id="5-4-SSL-터널링-vs-HTTP-HTTPS-게이트웨이"><a href="#5-4-SSL-터널링-vs-HTTP-HTTPS-게이트웨이" class="headerlink" title="5.4 SSL 터널링 vs HTTP/HTTPS 게이트웨이"></a>5.4 SSL 터널링 vs HTTP/HTTPS 게이트웨이</h3><ul>
+<li>HTTPS 프로토콜은 다른 프로토콜과 같은 방식으로 게이트웨이를 통과할 수 있다.</li>
+<li>게이트웨이가 FTP를 처리하는 방식과 같다.</li>
+</ul>
+<p><strong>단점</strong></p>
+<ul>
+<li>클라이언트-게이트웨이 사이에는 보안이 적용되지 않은 일반 HTTP 커넥션이 맺어져 있다.</li>
+<li>프락시가 인증을 담당하고 있기 때문에, 클라이언트는 원격 서버에 SS?L 클라이언트 인증을 할 수 없다.</li>
+<li>게이트웨이는 SSL을 완벽히 지원해야 한다.</li>
+</ul>
+<h3 id="5-5-터널-보안에-대한-고려사항들"><a href="#5-5-터널-보안에-대한-고려사항들" class="headerlink" title="5.5 터널 보안에 대한 고려사항들"></a>5.5 터널 보안에 대한 고려사항들</h3><ul>
+<li>터널 게이트웨으는 통신하고 있는 프로토콜이 터널을 올바른 용도로 사용하고 있는지 검증할 방법이 없다.</li>
+<li>터널의 오용을 최소화하기 위해서, 게이트웨이는 HTTPS 전용 포트인 443같이 잘 알려진 특정 포트만을 터널링할 수 있게 허용해야 한다.</li>
+</ul>
+<h2 id="6-릴레이"><a href="#6-릴레이" class="headerlink" title="6. 릴레이"></a>6. 릴레이</h2><ul>
+<li><p>HTTP 명세를 완전히 준수하지 않는 간단한 HTTP 프락시다.</p>
+</li>
+<li><p>커넥션을 맺기 위한 HTTP 통신을 한 다음, 바이트를 전달한다.</p>
+</li>
+<li><p>릴레이는 <code>Connection 헤더</code>를 제대로 처리하지 못해서 keep-alive 커넥션이 <code>행(hang)</code>에 걸리는 문제점이 생긴다.</p>
+<p>  <img src="/images/http-guide-chap8.png" alt></p>
+</li>
+</ul>
+<ol>
+<li>웹 클라이언트는 <code>Connection: Keep-Alive</code> 헤더를 보내서, 릴레이에 커넥션을 맺기를 원한다는 내용의 요청 메시지를 전송한다.</li>
+<li>릴레이가 HTTP 요청을 받지만, Connection 헤더를 이해하지 못하므로 요청을 서버로 넘긴다.</li>
+<li>웹 서버가 프락시로부터 <code>Connection: Keep-Alive</code>헤더를 받으면, 릴레이가 keep-alive를 하기 바란다고 잘못된 결론을 내려버린다.  이 시점부터 웹 서버는 릴레이와 함께 keep-alive 통신을 하고, keep-alive의 규칙에 맞게 동작할 것이다.</li>
+<li>릴레이는 웹 서버로부터 받은 <code>Connection: Keep-Alive</code> 헤더를 포함한 응답 메시지를 클라이언트에게 전달한다. 클라이언트와 서버는 keep-alive로 통신한다고 믿고 있지만, 실제로 통신하는 릴레이는 keep-alive가 무엇인지도 모른다.</li>
+<li>원서버는 릴레이가 자신에게 커넥셔능ㄹ 계속 맺고 있기를 요청했다고 믿기 때문에 커넥션을 끊지 않을것이다. 따라서 릴레이는 커넥션이 끊길 때를 기다리며 계속 커넥션을 맺고<code>(hang)</code> 있을 것이다.</li>
+<li>클라이언트가 응답 메시지를 받으면, 바로 다음 요청을 keep-alive 커넥션을 통해 릴레이에게 전송한다. 브라우저는 계속 돌고 있지만, 아무런 작업도 진행되지 않는다.</li>
+</ol>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-23T12:32:31+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at 2020년 2월 23일</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HTTP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>HTTP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/스터디/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>스터디</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://bebiangel.github.io/2019/10/13/http-guide-chap8/&title=HTTP 완벽가이드 8장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://bebiangel.github.io/2019/10/13/http-guide-chap8/&title=HTTP 완벽가이드 8장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://bebiangel.github.io/2019/10/13/http-guide-chap8/&title=HTTP 완벽가이드 8장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/10/19/http-guide-chap9/" rel="prev" title="HTTP 완벽가이드 9장">
+                                  
+                                      HTTP 완벽가이드 9장
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/10/06/http-guide-chap7-2/" rel="prev" title="HTTP 완벽가이드 7장 part2">
+                                    
+                                        HTTP 완벽가이드 7장 part2
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'HTTP 완벽가이드 8장',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/images/react.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:rossoneri1012@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/bebiangel"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;요약</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8장-통합점-게이트웨이-터널-릴레이"><span class="toc-text">8장 통합점: 게이트웨이, 터널, 릴레이</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-게이트웨이"><span class="toc-text">1. 게이트웨이</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-프로토콜-게이트웨이"><span class="toc-text">2. 프로토콜 게이트웨이</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-리소스-게이트웨이"><span class="toc-text">3. 리소스 게이트웨이</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-공용-게이트웨이-인터페이스"><span class="toc-text">3.1 공용 게이트웨이 인터페이스</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-서버-확장-API"><span class="toc-text">3.2 서버 확장 API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-애플리케이션-인터페이스와-웹-서비스"><span class="toc-text">4. 애플리케이션 인터페이스와 웹 서비스</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-터널"><span class="toc-text">5. 터널</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-CONNECT로-HTTP-터널-커넥션-맺기"><span class="toc-text">5.1 CONNECT로 HTTP 터널 커넥션 맺기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-데이터-터널링-시간-커넥션-관리"><span class="toc-text">5.2 데이터 터널링, 시간, 커넥션 관리</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-SSL-터널링"><span class="toc-text">5.3 SSL 터널링</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-SSL-터널링-vs-HTTP-HTTPS-게이트웨이"><span class="toc-text">5.4 SSL 터널링 vs HTTP/HTTPS 게이트웨이</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-터널-보안에-대한-고려사항들"><span class="toc-text">5.5 터널 보안에 대한 고려사항들</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-릴레이"><span class="toc-text">6. 릴레이</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/스터디/" href="/categories/스터디/"><div class='name'>스터디</div><div class='badge'>(22)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/코드스피츠/" href="/categories/코드스피츠/"><div class='name'>코드스피츠</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/HTTP/" style="font-size: 24px; color: #555">HTTP</a> <a href="/tags/스터디/" style="font-size: 24px; color: #555">스터디</a> <a href="/tags/코드스피츠/" style="font-size: 14px; color: #999">코드스피츠</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:rossoneri1012@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/bebiangel"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!-- google tag manager-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145117498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145117498-1');
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

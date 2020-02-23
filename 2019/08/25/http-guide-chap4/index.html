@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>HTTP 완벽가이드 4장 | 기록</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>기록하는 공간</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;전체
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/프론트/"
+            
+            
+            id="categories프론트">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;프론트
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/스터디/"
+            
+              rel="nofollow"
+            
+            
+            id="categories스터디">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;스터디
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          기록
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/프론트/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories프론트">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/스터디/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories스터디">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/프론트/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories프론트">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/스터디/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories스터디">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/08/25/http-guide-chap4/">
+        HTTP 완벽가이드 4장
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://bebiangel.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Jaewoo Han</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-08-25</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/스터디/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>스터디</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h1 id="4장-커넥션-관리"><a href="#4장-커넥션-관리" class="headerlink" title="4장 커넥션 관리"></a>4장 커넥션 관리</h1><h2 id="4-1-TCP-커넥션"><a href="#4-1-TCP-커넥션" class="headerlink" title="4.1 TCP 커넥션"></a>4.1 TCP 커넥션</h2><ul>
+<li>모든 HTTP통신은 네트워크 프로토콜의 집합인 TCP/IP를 통해 이루어진다.</li>
+<li>커넥션이 맺어지면, 메시지가 손실, 손상되거나 순서가 바뀌지 않고 안전하게 전달된다.</li>
+</ul>
+<p><strong><em>커넥션 과정</em></strong></p>
+<p>1) 브라우저가 <a href="https://bebiangel.github.io/"><code>https://bebiangel.github.io</code></a> 라는 호스트 명을 추출한다.</p>
+<p>2) 브라우저가 호스트 명에 대한 IP 주소를 찾는다.</p>
+<p>3) 브라우저가 포트 번호(80)를 얻는다.</p>
+<p>4) 브라우저가 IP 주소의 80포트로 TCP 커넥션을 생성한다.</p>
+<p>5) 브라우저가 서버로 HTTP GET 요청 메시지를 보낸다.</p>
+<p>6) 브라우저가 서버에서 온 HTTP 응답 메시지를 읽는다.</p>
+<p>7) 브라우저가 커넥션을 끊는다.</p>
+<h3 id="4-1-1-신뢰할-수-있는-데이터-전송-통로인-TCP"><a href="#4-1-1-신뢰할-수-있는-데이터-전송-통로인-TCP" class="headerlink" title="4.1.1 신뢰할 수 있는 데이터 전송 통로인 TCP"></a>4.1.1 신뢰할 수 있는 데이터 전송 통로인 TCP</h3><p>TCP는 HTTP에게 신뢰할만한 통신 방식을 제공한다.</p>
+<h3 id="4-1-2-TCP-스트림은-세그먼트로-나뉘어-IP-패킷을-통해-전송된다"><a href="#4-1-2-TCP-스트림은-세그먼트로-나뉘어-IP-패킷을-통해-전송된다" class="headerlink" title="4.1.2 TCP 스트림은 세그먼트로 나뉘어 IP 패킷을 통해 전송된다"></a>4.1.2 TCP 스트림은 세그먼트로 나뉘어 IP 패킷을 통해 전송된다</h3><p>TCP는 <code>IP 패킷</code> 이라는 작은 조각을 통해 데이터를 전송한다.</p>
+<h3 id="4-1-3-TCP-커넥션-유지하기"><a href="#4-1-3-TCP-커넥션-유지하기" class="headerlink" title="4.1.3 TCP 커넥션 유지하기"></a>4.1.3 TCP 커넥션 유지하기</h3><p>TCP커넥션은 여러 개를 가지고 있고, 포트 번호를 통해서 여러개의 커넥션을 유지한다.</p>
+<p><code>&lt;발신지 IP 주소, 발신지 포트, 수신지 IP주소, 수신지 포트&gt;</code> 네 가지 항목으로 커넥션을 생성하고, 서로 다른 TCP 커넥션은 일부는 같을 수 있으나 모든 항목이 같을 수는 없다.</p>
+<h2 id="4-2-TCP의-성능에-대한-고려"><a href="#4-2-TCP의-성능에-대한-고려" class="headerlink" title="4.2 TCP의 성능에 대한 고려"></a>4.2 TCP의 성능에 대한 고려</h2><ul>
+<li>HTTP는 TCP 바로 위에 있는 계층이기 때문에 HTTP 트랜잭션의 성능은 TCP 성능에 영향을 받는다.</li>
+<li>HTTP의 커넥션 최적화 요소들을 통해서 더 좋은 성능의 HTTP 애플리케이션을 설계하고 구현한다.</li>
+</ul>
+<h3 id="4-2-1-HTTP-트랜잭션-지연"><a href="#4-2-1-HTTP-트랜잭션-지연" class="headerlink" title="4.2.1 HTTP 트랜잭션 지연"></a>4.2.1 HTTP 트랜잭션 지연</h3><ul>
+<li>트랜잭션을 처리하는 시간은 TCP 커넥션을 설정하고, 요청을 전송하고, 응답 메시지를 보내는것에 비하면 상당히 짧다</li>
+</ul>
+<p><strong><em>트랜잭션을 지연시키는 원인</em></strong></p>
+<p>1) 클라이언트가 URI에 기술된 호스트에 방문한적이 없다면, DNS 이름 분석을 사용하여 호스트명을 IP 주소로 변환하는데 수십 초의 시간이 걸린다.</p>
+<p>2) 클라이언트는 TCP 커넥션 요청을 서버에게 보내고 서버가 커넥션 허용 응답을 회신하기를 기다린다. 서버에서 수백개의 HTTP 트랜잭션이 만들어진다면 많은 소요시간이 걸린다.</p>
+<p>3) 커넥션이 맺어지고 클라이언트는 HTTP 요청을 전송한다. 서버에서는 요청 메시지를 읽고 처리하는데 시간이 소요된다.</p>
+<p>4) 서버에서 HTTP 응답을 보내는데 시간이 걸린다.</p>
+<h3 id="4-2-2-성능-관련-중요-요소"><a href="#4-2-2-성능-관련-중요-요소" class="headerlink" title="4.2.2 성능 관련 중요 요소"></a>4.2.2 성능 관련 중요 요소</h3><p>고성능의 HTTP 소프트웨어를 개발하기 위해서 알아야 할 요소들</p>
+<ul>
+<li>TCP 커넥션의 핸드셰이크 설정</li>
+<li>인터넷의 혼잡을 제어하기 위한 TCP의 느린 시작(slow-start)</li>
+<li>데이터를 한데 모아 한 번에 전송하기 위한 네이글(nagle) 알고리즘</li>
+<li>TCP의 편승 확인응답을 위한 확인응답 지연 알고리즘</li>
+<li>TIME_WAIT 지연과 포트 고갈</li>
+</ul>
+<h3 id="4-2-3-TCP-커넥션-핸드셰이크-지연"><a href="#4-2-3-TCP-커넥션-핸드셰이크-지연" class="headerlink" title="4.2.3 TCP 커넥션 핸드셰이크 지연"></a>4.2.3 TCP 커넥션 핸드셰이크 지연</h3><ul>
+<li>TCP 커넥션을 열때, 커넥션을 맺기 위한 조건을 맞추기 위해 연속적으로 IP 패킷을 교환한다.</li>
+<li>작은 크기의 데이터 전송시에 커넥션을 사용한다면, HTTP 성능을 저하시킬 수 있다.</li>
+</ul>
+<p><strong><em>핸드셰이크 순서</em></strong></p>
+<p>1) 커넥션 생성시에 작은 TCP 패킷을 서버에게 보내는데, 커넥션 생성 요청이라는 의미를 가진<code>SYN</code> 플래그를 가진다.</p>
+<p>2) 서버가 커넥션을 받으면 커넥션 매개변수를 산출하고, 커넥션 요청이 받아들여졌음을 의미하는 <code>SYN</code> 과 <code>ACK</code> 플래그를 포함한 TCP 패킷을 클라이언트에게 보낸다.</p>
+<p>3) 클라이언트는 커넥션이 잘 맺어졌음을 서버에게 다시 확인응답 신호를 보낸다. 클라이언트는 확인응답 패킷과 데이터를 함께 보낼수 있다.</p>
+<h2 id="4-3-HTTP-커넥션-관리"><a href="#4-3-HTTP-커넥션-관리" class="headerlink" title="4.3 HTTP 커넥션 관리"></a>4.3 HTTP 커넥션 관리</h2><h3 id="4-3-1-흔히-잘못-이해하는-Connection-헤더"><a href="#4-3-1-흔히-잘못-이해하는-Connection-헤더" class="headerlink" title="4.3.1 흔히 잘못 이해하는 Connection 헤더"></a>4.3.1 흔히 잘못 이해하는 Connection 헤더</h3><ul>
+<li>HTTP Connection 헤더 필드는 토큰을 쉼표로 구분하여 가지고 있으며, 다른 커넥션에 전달되지 않는다.</li>
+<li>Connection 헤더에 있는 모든 헤더 필드는 메시지를 다른 곳으로 전달하는 시점에 삭제되어야한다.</li>
+</ul>
+<h3 id="4-3-2-순차적인-트랜잭션-처리에-의한-지연"><a href="#4-3-2-순차적인-트랜잭션-처리에-의한-지연" class="headerlink" title="4.3.2 순차적인 트랜잭션 처리에 의한 지연"></a>4.3.2 순차적인 트랜잭션 처리에 의한 지연</h3><ul>
+<li>여러개의 리소스를 받아와야 하는 화면이 있다면, 각각의 리소스의 HTTP 트랜잭션을 만들어야한다.</li>
+<li>특정 브라우저의 경우 객체를 화면에 배치하려면 객체의 크기를 알아야 하기 때문에, 모든 객체를 내려받기 전까지는 빈 화면을 보여준다.</li>
+</ul>
+<p><strong><em>HTTP 커넥션의 성능을 향상시키는 기술</em></strong></p>
+<p><strong>병렬(parallel) 커넥션</strong></p>
+<p>여러 개의 TCP 커넥션을 통한 동시 HTTP 요청</p>
+<p><strong>지속(persistent) 커넥션</strong></p>
+<p>커넥션을 맺고 끊는 데서 발생하는 지연을 제거하기 위한 TCP 커넥션의 재활용</p>
+<p>파이프라인(piplined) 커넥션</p>
+<p>공유 TCP 커넥션을 통한 병렬 HTTP 요청</p>
+<p><strong>다중(multiplexed) 커넥션</strong></p>
+<p>요청과 응답들에 대한 중재</p>
+<h2 id="4-4-병렬-커넥션"><a href="#4-4-병렬-커넥션" class="headerlink" title="4.4. 병렬 커넥션"></a>4.4. 병렬 커넥션</h2><ul>
+<li>브라우저가 HTML 페이지를 보여주는데 필요한 리소스를 순서대로 받는다면 너무 느리다.</li>
+<li>HTTP는 클라이언트가 여러 개의 커넥션을 맺음으로써 여러 개의 HTTP 트랜잭션을 병렬로 처리할 수 있게 한다.</li>
+</ul>
+<h3 id="4-4-1-병렬-커넥션은-페이지를-더-빠르게-내려받는다"><a href="#4-4-1-병렬-커넥션은-페이지를-더-빠르게-내려받는다" class="headerlink" title="4.4.1 병렬 커넥션은 페이지를 더 빠르게 내려받는다"></a>4.4.1 병렬 커넥션은 페이지를 더 빠르게 내려받는다</h3><ul>
+<li>커넥션의 대역폭 제한과 커넥션이 동작하지 않고 있는 시간을 활용하면, 객체가 여러개 있는 웹페이지를 더 빠르게 내려받을수 있을 것이다.</li>
+<li>각 커넥션의 지연 시간을 겹치게 하면 총 지연 시간을 줄일 수 있다.</li>
+<li>인터넷 대역폭을 한 개의 커넥션이 다 써버리지 않고, 나머지 객체를 내려받는 데에 남은 대역폭을 사용한다.</li>
+</ul>
+<h3 id="4-4-2-병렬-커넥션이-항상-더-빠르지는-않다"><a href="#4-4-2-병렬-커넥션이-항상-더-빠르지는-않다" class="headerlink" title="4.4.2 병렬 커넥션이 항상 더 빠르지는 않다"></a>4.4.2 병렬 커넥션이 항상 더 빠르지는 않다</h3><ul>
+<li>클라이언트의 네트워크 대역폭이 좁을 때는 대부분 시간을 데이터 전송하는 데만 쓸 것이다.</li>
+<li>제한된 대역폭 내에서 각 객체를 전송받는 것은 느리기 때문에 성능상의 장점이 사라진다.</li>
+<li>서버는 다른 여러 사용자의 요청도 함께 처리해야 하기 때문에 수백 개의 커넥션을 허용하는 경우는 드물다.</li>
+</ul>
+<h2 id="4-5-지속-커넥션"><a href="#4-5-지속-커넥션" class="headerlink" title="4.5 지속 커넥션"></a>4.5 지속 커넥션</h2><ul>
+<li>클라이언트가 같은 사이트에 여러 개의 커넥션을 맺는 속성을 <code>지역성(site locality)</code>라 한다.</li>
+<li>HTTP/1.1을 지원하는 기기는 처리가 완료된 후에도 TCP 커넥션을 유지하여 앞으로 있을 HTTP 요청에 재사용이 가능하다.</li>
+<li>처리가 완료된 후에도 계속 연결된 상태로 있는 TCP 커넥션을 <code>지속 커넥션</code>이라고 부른다.</li>
+</ul>
+<h3 id="4-5-1-지속-커넥션-vs-병렬-커넥션"><a href="#4-5-1-지속-커넥션-vs-병렬-커넥션" class="headerlink" title="4.5.1 지속 커넥션 vs 병렬 커넥션"></a>4.5.1 지속 커넥션 vs 병렬 커넥션</h3><p><strong><em>병렬 커넥션 단점</em></strong></p>
+<ul>
+<li>각 트랜잭션마다 새로운 커넥션을 맺고 끊기 때문에 시간과 대역폭이 소요된다.</li>
+<li>각각의 새로운 커넥션은 TCP 느린 시작 때문에 성능이 떨어진다.</li>
+<li>실제로 연결할 수 잇는 병렬 커넥션의 수에는 제한이 있다.</li>
+</ul>
+<p><strong><em>지속 커넥션 장점</em></strong></p>
+<ul>
+<li>커넥션을 맺기 위한 사전 작업과 지연을 줄여주고, 커넥션의 수를 줄여준다.</li>
+</ul>
+<p><strong><em>지속 커넥션 단점</em></strong></p>
+<ul>
+<li>지속 커넥션을 잘못 관리할 경우, 계속 연결된 상태로 잇는 수많은 커넥션이 쌓인다.</li>
+<li>로컬의 리소스 그리고 원격의 클라이언트와 서버의 리소스에 불필요한 소모를 발생한다.</li>
+</ul>
+<blockquote>
+<p><strong>지속 커넥션은 병렬 커넥션과 함께 사용될 때에 가장 효과적이다.</strong></p>
+</blockquote>
+<h3 id="4-5-2-HTTP-1-0-의-Keep-Alive-커넥션"><a href="#4-5-2-HTTP-1-0-의-Keep-Alive-커넥션" class="headerlink" title="4.5.2 HTTP/1.0+의 Keep-Alive 커넥션"></a>4.5.2 HTTP/1.0+의 Keep-Alive 커넥션</h3><ul>
+<li>커넥션을 맺고 끊는 데 필요한 작업이 없어서 시간이 단축된다.</li>
+<li>keep-alive가 HTTP/1.1 명세에서는 빠졌지만, 아직 널리 사용되고 있어서 HTTP 애플리케이션은 그것을 처리할 수 있게 개발해야 한다.</li>
+<li>keep-alive 헤더 사용은 선택 사항이지만, Connection:Keep-Alive 헤더가 있을 때만 사용 할 수 있다.</li>
+</ul>
+<h2 id="4-6-파이프라인-커넥션"><a href="#4-6-파이프라인-커넥션" class="headerlink" title="4.6 파이프라인 커넥션"></a>4.6 파이프라인 커넥션</h2><ul>
+<li>지속 커넥션을 통한 파이프라이닝은 keep-alive 커넥션의 성능을 높여준다.</li>
+</ul>
+<p><strong><em>파이프라인의 제약조건</em></strong></p>
+<ul>
+<li>HTTP 클라이언트는 커넥션이 지속 커넥션인지 확인하기 전까지는 파이프라인을 이어서는 안된다.</li>
+<li>HTTP 응답은 요청 순서와 같게 와야한다.</li>
+<li>HTTP 클라이언트는 커넥션이 언제 끊어지더라도, 완료되지 않은 요청이 파이프라인에 있으면 언제든 다시 요청을 보낼 준비가 되어 있어야 한다.</li>
+<li>HTTP 클라이언트는 POST 요청같이 반복해서 보낼 경우 문제가 생기는 요청은 파이프라인으로 보내면 안된다.</li>
+</ul>
+<h2 id="4-7-커넥션-끊기에-대한-미스터리"><a href="#4-7-커넥션-끊기에-대한-미스터리" class="headerlink" title="4.7 커넥션 끊기에 대한 미스터리"></a>4.7 커넥션 끊기에 대한 미스터리</h2><ul>
+<li>커넥션 관리(언제 어떻게 끊기는지)는 명확한 기준이 없다.</li>
+<li>HTTP 클라이언트, 서버 혹은 프락시든 언제든지 TCP 전송 커넥션을 끊을 수 있다.</li>
+<li>커넥션이 에러가 없더라도 언제든 끊을 수 있다.</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-23T12:32:31+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at 2020년 2월 23일</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HTTP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>HTTP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/스터디/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>스터디</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://bebiangel.github.io/2019/08/25/http-guide-chap4/&title=HTTP 완벽가이드 4장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://bebiangel.github.io/2019/08/25/http-guide-chap4/&title=HTTP 완벽가이드 4장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://bebiangel.github.io/2019/08/25/http-guide-chap4/&title=HTTP 완벽가이드 4장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/09/08/http-guide-chap5/" rel="prev" title="HTTP 완벽가이드 5장">
+                                  
+                                      HTTP 완벽가이드 5장
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/08/18/http-guide-chap3/" rel="prev" title="HTTP 완벽가이드 3장">
+                                    
+                                        HTTP 완벽가이드 3장
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'HTTP 완벽가이드 4장',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/images/react.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:rossoneri1012@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/bebiangel"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;요약</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#4장-커넥션-관리"><span class="toc-text">4장 커넥션 관리</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-TCP-커넥션"><span class="toc-text">4.1 TCP 커넥션</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-신뢰할-수-있는-데이터-전송-통로인-TCP"><span class="toc-text">4.1.1 신뢰할 수 있는 데이터 전송 통로인 TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-TCP-스트림은-세그먼트로-나뉘어-IP-패킷을-통해-전송된다"><span class="toc-text">4.1.2 TCP 스트림은 세그먼트로 나뉘어 IP 패킷을 통해 전송된다</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-TCP-커넥션-유지하기"><span class="toc-text">4.1.3 TCP 커넥션 유지하기</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-TCP의-성능에-대한-고려"><span class="toc-text">4.2 TCP의 성능에 대한 고려</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-HTTP-트랜잭션-지연"><span class="toc-text">4.2.1 HTTP 트랜잭션 지연</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-성능-관련-중요-요소"><span class="toc-text">4.2.2 성능 관련 중요 요소</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-TCP-커넥션-핸드셰이크-지연"><span class="toc-text">4.2.3 TCP 커넥션 핸드셰이크 지연</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-HTTP-커넥션-관리"><span class="toc-text">4.3 HTTP 커넥션 관리</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-1-흔히-잘못-이해하는-Connection-헤더"><span class="toc-text">4.3.1 흔히 잘못 이해하는 Connection 헤더</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-2-순차적인-트랜잭션-처리에-의한-지연"><span class="toc-text">4.3.2 순차적인 트랜잭션 처리에 의한 지연</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-병렬-커넥션"><span class="toc-text">4.4. 병렬 커넥션</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-1-병렬-커넥션은-페이지를-더-빠르게-내려받는다"><span class="toc-text">4.4.1 병렬 커넥션은 페이지를 더 빠르게 내려받는다</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-2-병렬-커넥션이-항상-더-빠르지는-않다"><span class="toc-text">4.4.2 병렬 커넥션이 항상 더 빠르지는 않다</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-지속-커넥션"><span class="toc-text">4.5 지속 커넥션</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-1-지속-커넥션-vs-병렬-커넥션"><span class="toc-text">4.5.1 지속 커넥션 vs 병렬 커넥션</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-2-HTTP-1-0-의-Keep-Alive-커넥션"><span class="toc-text">4.5.2 HTTP/1.0+의 Keep-Alive 커넥션</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-파이프라인-커넥션"><span class="toc-text">4.6 파이프라인 커넥션</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-커넥션-끊기에-대한-미스터리"><span class="toc-text">4.7 커넥션 끊기에 대한 미스터리</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/스터디/" href="/categories/스터디/"><div class='name'>스터디</div><div class='badge'>(22)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/코드스피츠/" href="/categories/코드스피츠/"><div class='name'>코드스피츠</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/HTTP/" style="font-size: 24px; color: #555">HTTP</a> <a href="/tags/스터디/" style="font-size: 24px; color: #555">스터디</a> <a href="/tags/코드스피츠/" style="font-size: 14px; color: #999">코드스피츠</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:rossoneri1012@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/bebiangel"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!-- google tag manager-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145117498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145117498-1');
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

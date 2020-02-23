@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>HTTP 완벽가이드 13장 | 기록</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>기록하는 공간</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;전체
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/프론트/"
+            
+            
+            id="categories프론트">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;프론트
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/스터디/"
+            
+              rel="nofollow"
+            
+            
+            id="categories스터디">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;스터디
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          기록
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/프론트/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories프론트">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/스터디/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories스터디">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/프론트/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories프론트">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/스터디/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories스터디">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/11/24/http-guide-chap13/">
+        HTTP 완벽가이드 13장
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://bebiangel.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Jaewoo Han</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-11-24</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/스터디/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>스터디</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h1 id="13장-다이제스트-인증"><a href="#13장-다이제스트-인증" class="headerlink" title="13장 다이제스트 인증"></a>13장 다이제스트 인증</h1><blockquote>
+<p>목표: 기본 인증과 호환되는 더 안전한 대체재로서의 다이제스트 인증을 알아본다.</p>
+</blockquote>
+<h2 id="1-다이제스트-인증의-개선점"><a href="#1-다이제스트-인증의-개선점" class="headerlink" title="1. 다이제스트 인증의 개선점"></a>1. 다이제스트 인증의 개선점</h2><p><strong>특징</strong></p>
+<ul>
+<li>비밀번호를 절대로 네트워크를 통해 평문으로 전송하지 않는다.</li>
+<li>인증 체결을 가로채서 재현하려는 악의적인 사람들을 처단한다.</li>
+<li>구현하기에 따라서, 메시지 내용 위조를 막는것이 가능하다.</li>
+<li>그 외의 잘 알려진 형태의 공격을 막는다.</li>
+</ul>
+<h3 id="1-1-비밀번호를-안전하게-지키기-위해-요약-사용하기"><a href="#1-1-비밀번호를-안전하게-지키기-위해-요약-사용하기" class="headerlink" title="1.1 비밀번호를 안전하게 지키기 위해 요약 사용하기"></a>1.1 비밀번호를 안전하게 지키기 위해 요약 사용하기</h3><ul>
+<li>다이제스트 인증을 요약하면 “절대로 비밀번호를 네트워크를 통해 보내지 않는다” 이다.</li>
+<li>클라이언트는 비밀번호를 비가역적으로 뒤섞은 <code>지문(fingerprint)</code> 혹은 <code>요약(digest)</code>를 보낸다.</li>
+</ul>
+<h3 id="1-2-단방향-요약"><a href="#1-2-단방향-요약" class="headerlink" title="1.2 단방향 요약"></a>1.2 단방향 요약</h3><ul>
+<li><code>요약</code>은 ‘정보 본문의 압축’이다.</li>
+<li>요약은 단방향 함수로 동작하고, 무한 가지의 모든 입력 값들을 유한한 범위의 압축으로 변환한다.</li>
+<li>만약 비밀번호를 모른다면 서버에게 보내줄 알맞은 요약을 추측하기 위해 많은 시간을 소모하게 된다.</li>
+<li>요약은 비밀번호를 그대로 전송해야 할 필요성에서 해방시켜준다.</li>
+</ul>
+<h3 id="1-3-재전송-방지를-위한-난스-nonce-사용"><a href="#1-3-재전송-방지를-위한-난스-nonce-사용" class="headerlink" title="1.3 재전송 방지를 위한 난스(nonce) 사용"></a>1.3 재전송 방지를 위한 난스(nonce) 사용</h3><ul>
+<li><code>요약</code>은 비밀번호 자체와 다름 없으므로 요약을 가로챈다면 요약을 서버로 재전송할 수 있다.</li>
+<li>재전송을 막기 위해서 서버는 클라이언트에게 <code>난스</code>라고 불리는 특별한 증표를 넘겨준다.</li>
+<li>난스는 약 1밀리초마다, 인증할때마다 바뀌게 된다.</li>
+</ul>
+<h3 id="1-4-다이제스트-인증-핸드-셰이크"><a href="#1-4-다이제스트-인증-핸드-셰이크" class="headerlink" title="1.4 다이제스트 인증 핸드 셰이크"></a>1.4 다이제스트 인증 핸드 셰이크</h3><p><img src="/images/http-guide-chap13.png" alt></p>
+<ol>
+<li>서버는 난스 값을 계산한다.</li>
+<li>서버는 난스를 WWW-Authenticate 인증요구 메시지에 담아, 알고리즘 목록과 함께 클라이언트에 보낸다.</li>
+<li>클라이언트는 알고리즘을 선택하고 비밀번호와 그 외 데이터에 대한 요약을 계산한다.</li>
+<li>클라이언트는 Authorization 메시지에 요약을 담아 서버에게 돌려준다.</li>
+<li>서버는 요약, 선택한 알고리즘, 그 외 보조 데이터들을 받고, 클라이언트가 했던 그대로 요약을 계산한다. 서버는 자신이 계산한 요약과 네트워크로 전송되어 온 요약이 서로 같은지 확인한다.</li>
+</ol>
+<h2 id="2-보호-수준-Quality-of-Protection-향상"><a href="#2-보호-수준-Quality-of-Protection-향상" class="headerlink" title="2. 보호 수준(Quality of Protection) 향상"></a>2. 보호 수준(Quality of Protection) 향상</h2><ul>
+<li>qop 필드는 클라이언트와 서버가 어떤 보호 기법을 어느 정도 수준으로 사용할 것인지 협상할 수 있게 해준다.</li>
+</ul>
+<h3 id="2-1-메시지-무결성-보호"><a href="#2-1-메시지-무결성-보호" class="headerlink" title="2.1 메시지 무결성 보호"></a>2.1 메시지 무결성 보호</h3><ul>
+<li>무결성 보호가 적용되었을 때 계산되는 엔터티 본문은, 메시지 본문의 해시가 아닌 엔터티 본문의 해시이다.</li>
+<li>송신자에 의해 어떠한 전송 인코딩이 적용되기도 전에 먼저 계산되고 그 후 수신자에 의해 제거된다.</li>
+</ul>
+<h3 id="2-2-다이제스트-인증-헤더"><a href="#2-2-다이제스트-인증-헤더" class="headerlink" title="2.2 다이제스트 인증 헤더"></a>2.2 다이제스트 인증 헤더</h3><ul>
+<li>기본, 다이제스트 인증은 WWW-Authentication 헤더에 담겨 전달되는 인증요구와, Authentication 헤더에 담겨 전달되는 인기 응답을 포함한다.</li>
+<li>다이제스트는 Authentication-Info 헤더를 추가했다.</li>
+<li>3단계 핸드셰이크를 완성하고 다음번 사용할 난스를 전달하기 위해 인증 성공 후에 전송된다.</li>
+<li><h2 id="3-다이제스트-인증-작업시-고려할것들"><a href="#3-다이제스트-인증-작업시-고려할것들" class="headerlink" title="3. 다이제스트 인증 작업시 고려할것들"></a>3. 다이제스트 인증 작업시 고려할것들</h2></li>
+</ul>
+<h3 id="3-1-다중-인증요구"><a href="#3-1-다중-인증요구" class="headerlink" title="3.1  다중 인증요구"></a>3.1  다중 인증요구</h3><ul>
+<li>서버는 한 리소스에 대해 여러 인증을 요구할 수 있다.</li>
+<li>다양한 인증 옵션을 제공하는 경우, ‘<code>가장 허약한 부분</code>‘에 대한 보안우려가 있다는 것이 명확하다.</li>
+</ul>
+<h3 id="3-2-오류처리"><a href="#3-2-오류처리" class="headerlink" title="3.2 오류처리"></a>3.2 오류처리</h3><ul>
+<li>지시자나 그 값이 적절하지 않거나 요구된 지시자가 빠져 있으면, 응답은 400 Bad Request이다.</li>
+<li>인증 서버는 <code>uri</code> 지시자가 가리키는 리소스가 요청줄에 명시된 리소스와 같음을 확인해야 한다.</li>
+<li>반복된 실패에 대해서는 따로 기록해 두는 것이 좋다.</li>
+</ul>
+<h3 id="3-3-보호-공간-Protection-Space"><a href="#3-3-보호-공간-Protection-Space" class="headerlink" title="3.3 보호 공간(Protection Space)"></a>3.3 보호 공간(Protection Space)</h3><ul>
+<li><code>영역 값</code>은 접근한 서버의 루트 URL과 결합되어 보호 공간을 정의한다.</li>
+<li>영역 값은 원 서버에 의해 할당되는 문자열이며 인증 제도에 추가적인 의미를 더한다.</li>
+<li>보호 공간은 어떤 자격이 자동으로 적용되는 영역을 정한다.</li>
+</ul>
+<h3 id="3-4-URI-다시-쓰기"><a href="#3-4-URI-다시-쓰기" class="headerlink" title="3.4 URI 다시 쓰기"></a>3.4 URI 다시 쓰기</h3><ul>
+<li>프락시는 가리키는 리소스의 변경 없이 구문만 고쳐서 URI를 다시 쓰기도 한다.<ul>
+<li>호스트 명은 정규화되거나 IP 주소로 대체된다.</li>
+<li>문자들은 <code>%</code> escape 형식으로 대체될 수 있다.</li>
+<li>서버로부터 가져오는 리소스에 영향을 주지 않는, 타입에 대한 추가 속성이 URI의 끝에 붙거나 중간에 삽입될 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-캐시"><a href="#3-5-캐시" class="headerlink" title="3.5 캐시"></a>3.5 캐시</h3><p>Authorization 헤더를 포함한 요청과 그에 대한 응답을 받은 경우, 두 Cache-Control 지시자 중 하나가 응답에 존재하지 않는 한 다른 요청에 대해 응답을 반환해서는 안된다.</p>
+<h2 id="4-보안에-대한-고려사항"><a href="#4-보안에-대한-고려사항" class="headerlink" title="4. 보안에 대한 고려사항"></a>4. 보안에 대한 고려사항</h2><h3 id="4-1-헤더-부당-변경"><a href="#4-1-헤더-부당-변경" class="headerlink" title="4.1 헤더 부당 변경"></a>4.1 헤더 부당 변경</h3><p>헤더 부당 변경에 대해 안전한 시스템을 제공하기 위해서, <strong>양 종단 암호화</strong>나 <strong>헤더에 대한 디지털 서명</strong>이 필요하다.</p>
+<h3 id="4-2-재전송-공격"><a href="#4-2-재전송-공격" class="headerlink" title="4.2 재전송 공격"></a>4.2 재전송 공격</h3><ul>
+<li>폼 데이터를 전송할 때 이전에 사용했던 자격을 재사용해도 문제없이 동작한다면, 큰 문제가 생기게 된다.</li>
+<li>재전송 공격을 완전히 피하기 위해서는 매 트랜잭션마다 유일한 난스 값을 사용하는 것이다.</li>
+<li>서버는 매 트랜잭션마다 <code>난스</code>와 함께 <code>타임아웃</code> 값을 발급한다.</li>
+</ul>
+<h3 id="4-3-다중-인증-메커니즘"><a href="#4-3-다중-인증-메커니즘" class="headerlink" title="4.3 다중 인증 메커니즘"></a>4.3 다중 인증 메커니즘</h3><ul>
+<li>클라이언트에게 항상 가장 강력한 인증제도를 선택하도록 한다.</li>
+<li>가장 강력한 인증 제도만을 유지하는 프락시 서버를 사용한다.</li>
+</ul>
+<h3 id="4-4-사전-공격"><a href="#4-4-사전-공격" class="headerlink" title="4.4 사전 공격"></a>4.4 사전 공격</h3><ul>
+<li>전형적인 비밀번호 추측 공격이다.</li>
+<li>비밀번호 만료 정책이 없고, 충분한 시간이 있고, 비밀번호를 크래킹할 비용을 치를 수 있다면, 비밀번호를 쉽게 수집할 수 있다.</li>
+<li>크래킹하기 어렵도록 복잡한 비밀번호를 사용하고 괜찮은 비밀번호 만료 정책을 사용하는 것이 좋다.</li>
+</ul>
+<h3 id="4-5-악의적인-프락시와-중간자-공격"><a href="#4-5-악의적인-프락시와-중간자-공격" class="headerlink" title="4.5 악의적인 프락시와 중간자 공격"></a>4.5 악의적인 프락시와 중간자 공격</h3><ul>
+<li>프락시중 하나가 악의적이거나 보안이 허술하다면 클라이언트는 중간자 공격에 취약한 상태가 될 수 있다.</li>
+<li>프락시는 보통 정교한 프로그래밍 인터페이스를 제공하므로 그러한 프락시들을 이용하는 플러그인을 이용하여 트래픽을 가로채 수정하는 것이 가능하다.</li>
+<li>이 문제를 해결하기에는 한계가 있으므로, 클라이언트가 가능한 가장 강력한 인증을 선택하도록 설정한다.</li>
+</ul>
+<h3 id="4-6-선택-평문-공격"><a href="#4-6-선택-평문-공격" class="headerlink" title="4.6 선택 평문 공격"></a>4.6 선택 평문 공격</h3><ul>
+<li>보안이 허술하거나 악의적인 프락시가 트래픽 중간에 끼어든다면, 클라이언트가 응답 계산을 하기 위한 난스를 제공 할 수 있다.</li>
+<li>응답을 계산하기 위해 알려진 키를 사용하는 것은 응답의 암호 해독을 쉽게 한다.</li>
+<li>클라이언트가 서버에서 제공된 난스 대신 선택적인 c난스 지시자를 사용하여 응답을 생성할 수 있도록 설정하는 것이 좋다.</li>
+</ul>
+<h3 id="4-7-비밀번호-저장"><a href="#4-7-비밀번호-저장" class="headerlink" title="4.7 비밀번호 저장"></a>4.7 비밀번호 저장</h3><ul>
+<li>다이제스트 인증 비밀번호 파일이 유출되면 영역의 모든 문서는 공격자에게 노출된다.</li>
+<li>비밀번호 파일이 평문으로 된 비밀번호를 포함하고 있다고 생각하고 안전하게 보호한다.</li>
+<li>영역 이름이 유일함을 보장한다.</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-23T12:32:31+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at 2020년 2월 23일</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HTTP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>HTTP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/스터디/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>스터디</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://bebiangel.github.io/2019/11/24/http-guide-chap13/&title=HTTP 완벽가이드 13장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://bebiangel.github.io/2019/11/24/http-guide-chap13/&title=HTTP 완벽가이드 13장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://bebiangel.github.io/2019/11/24/http-guide-chap13/&title=HTTP 완벽가이드 13장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/12/01/http-guide-chap14/" rel="prev" title="HTTP 완벽가이드 14장">
+                                  
+                                      HTTP 완벽가이드 14장
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/11/24/http-guide-chap12/" rel="prev" title="HTTP 완벽가이드 12장">
+                                    
+                                        HTTP 완벽가이드 12장
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'HTTP 완벽가이드 13장',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/images/react.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:rossoneri1012@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/bebiangel"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;요약</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#13장-다이제스트-인증"><span class="toc-text">13장 다이제스트 인증</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-다이제스트-인증의-개선점"><span class="toc-text">1. 다이제스트 인증의 개선점</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-비밀번호를-안전하게-지키기-위해-요약-사용하기"><span class="toc-text">1.1 비밀번호를 안전하게 지키기 위해 요약 사용하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-단방향-요약"><span class="toc-text">1.2 단방향 요약</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-재전송-방지를-위한-난스-nonce-사용"><span class="toc-text">1.3 재전송 방지를 위한 난스(nonce) 사용</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-다이제스트-인증-핸드-셰이크"><span class="toc-text">1.4 다이제스트 인증 핸드 셰이크</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-보호-수준-Quality-of-Protection-향상"><span class="toc-text">2. 보호 수준(Quality of Protection) 향상</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-메시지-무결성-보호"><span class="toc-text">2.1 메시지 무결성 보호</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-다이제스트-인증-헤더"><span class="toc-text">2.2 다이제스트 인증 헤더</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-다이제스트-인증-작업시-고려할것들"><span class="toc-text">3. 다이제스트 인증 작업시 고려할것들</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-다중-인증요구"><span class="toc-text">3.1  다중 인증요구</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-오류처리"><span class="toc-text">3.2 오류처리</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-보호-공간-Protection-Space"><span class="toc-text">3.3 보호 공간(Protection Space)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-URI-다시-쓰기"><span class="toc-text">3.4 URI 다시 쓰기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-캐시"><span class="toc-text">3.5 캐시</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-보안에-대한-고려사항"><span class="toc-text">4. 보안에 대한 고려사항</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-헤더-부당-변경"><span class="toc-text">4.1 헤더 부당 변경</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-재전송-공격"><span class="toc-text">4.2 재전송 공격</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-다중-인증-메커니즘"><span class="toc-text">4.3 다중 인증 메커니즘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-사전-공격"><span class="toc-text">4.4 사전 공격</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-악의적인-프락시와-중간자-공격"><span class="toc-text">4.5 악의적인 프락시와 중간자 공격</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-선택-평문-공격"><span class="toc-text">4.6 선택 평문 공격</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-비밀번호-저장"><span class="toc-text">4.7 비밀번호 저장</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/스터디/" href="/categories/스터디/"><div class='name'>스터디</div><div class='badge'>(22)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/코드스피츠/" href="/categories/코드스피츠/"><div class='name'>코드스피츠</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/HTTP/" style="font-size: 24px; color: #555">HTTP</a> <a href="/tags/스터디/" style="font-size: 24px; color: #555">스터디</a> <a href="/tags/코드스피츠/" style="font-size: 14px; color: #999">코드스피츠</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:rossoneri1012@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/bebiangel"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!-- google tag manager-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145117498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145117498-1');
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>HTTP 완벽가이드 14장 | 기록</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>기록하는 공간</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;전체
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/프론트/"
+            
+            
+            id="categories프론트">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;프론트
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/스터디/"
+            
+              rel="nofollow"
+            
+            
+            id="categories스터디">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;스터디
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          기록
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/프론트/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories프론트">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/스터디/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories스터디">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/프론트/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories프론트">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/스터디/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories스터디">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/12/01/http-guide-chap14/">
+        HTTP 완벽가이드 14장
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://bebiangel.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Jaewoo Han</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-12-01</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/스터디/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>스터디</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h1 id="14장-보안-HTTP"><a href="#14장-보안-HTTP" class="headerlink" title="14장 보안 HTTP"></a>14장 보안 HTTP</h1><blockquote>
+<p><em>목표:  HTTP 트랜잭션을 안전하게 보호하는 더 복잡한 기술들을 알아본다.</em></p>
+</blockquote>
+<h2 id="1-HTTP를-안전하게-만들기"><a href="#1-HTTP를-안전하게-만들기" class="headerlink" title="1. HTTP를 안전하게 만들기"></a>1. HTTP를 안전하게 만들기</h2><ul>
+<li>사용자들이 온라인 쇼핑이나 인터넷뱅킹을 안심하고 사용하기 위해서는 강력한 보안이 필요하다.</li>
+<li>HTTP의 보안 버전은 효율적이고, 이식성이 좋으며, 관리가 쉽고, 현실 세계의 변화에 대한 적응력이 좋아야 한다.</li>
+</ul>
+<h3 id="1-1-HTTPS"><a href="#1-1-HTTPS" class="headerlink" title="1.1 HTTPS"></a>1.1 HTTPS</h3><ul>
+<li>모든 HTTP 요청과 응답 데이터는 네트워크로 보내지기 전에 암호화 된다.</li>
+<li>HTTP의 하부의 보안 계층에서 안전 소켓 계층(Secure Sockets Lyaer, SSL) 또는 전송 계층 보안(Transport Layer Security, TLS)에서 동작한다.</li>
+<li>어려운 인코딩 및 디코딩 작업은 SSL 라이브러리 안에서 동작하므로 클라이언트와 서버가 크게 변경할 필요는 없다.</li>
+</ul>
+<h2 id="2-디지털-암호학"><a href="#2-디지털-암호학" class="headerlink" title="2. 디지털 암호학"></a>2. 디지털 암호학</h2><h3 id="2-1-암호학-용어들"><a href="#2-1-암호학-용어들" class="headerlink" title="2.1 암호학 용어들"></a>2.1 암호학 용어들</h3><ul>
+<li><strong>암호:</strong>  테스트를 아무나</li>
+<li><strong>키</strong>: 암호의 동작을 변경하는 숫자로 된 매개변수</li>
+<li><strong>대칭키 암호 체계</strong>: 인코딩과 디코딩에 <code>같은 키</code>를 사용하는 알고리즘</li>
+<li><strong>비대칭키 암호 체계</strong>: 인코딩과 디코딩에 <code>다른 키</code>를 사용하는 알고리즘</li>
+<li><strong>공개키 암호법</strong>: 비밀 메시지를 전달하는 수백만 대의 컴퓨터를 쉽게 만들 수 있는 시스템</li>
+<li><strong>디지털 서명</strong>: 메시지가 위조 혹은 변조되지 않았음을 인증하는 체크섬</li>
+<li><strong>디지털 인증서</strong>: 신뢰할 만한 조직에 의해 서명되고 검증된 신원 확인 정보</li>
+</ul>
+<h3 id="2-2-암호-cipher"><a href="#2-2-암호-cipher" class="headerlink" title="2.2 암호(cipher)"></a>2.2 암호(cipher)</h3><ul>
+<li>암호란 메시지를 인코딩하는 어떤 특정한 방법과 그 비밀 메시지를 디코딩하는 방법이다.</li>
+<li>암호가 적용되어 있는 메시지를 <code>텍스트</code> 혹은 <code>평문</code>이라고 한다.</li>
+<li>암호는 상대적으로 간단한 알고리즘으로 시작해 기술의 진보에 따라 복잡한 암호를 빠르고 정확하게 인코딩&amp;디코딩 하는 기계를 만들었다.</li>
+</ul>
+<h3 id="2-3-키가-있는-암호"><a href="#2-3-키가-있는-암호" class="headerlink" title="2.3 키가 있는 암호"></a>2.3 키가 있는 암호</h3><ul>
+<li>디코딩 과정을 바르게 동작시키려면 올바른 키를 암호 기계에 입력할 필요가 있다.</li>
+<li>암호키는 하나의 암호 기계를 여러 가상 암호 기계의 집합처럼 만든다.</li>
+<li>서로 다른 키 값을 가지고 있으므로 제각기 다르게 동작한다.</li>
+</ul>
+<h3 id="2-4-디지털-암호"><a href="#2-4-디지털-암호" class="headerlink" title="2.4 디지털 암호"></a>2.4 디지털 암호</h3><ul>
+<li>속도 및 기능에 대한 기계 장치의 한계에서 벗어나, 복잡한 인코딩과 디코딩 알고리즘이 가능하다.</li>
+<li>단일 암호 알고리즘으로 키의 값마다 다른 수조 개의 가상 암호 알고리즘을 만들어낼 수 있다.</li>
+</ul>
+<h2 id="3-대칭키-암호법"><a href="#3-대칭키-암호법" class="headerlink" title="3. 대칭키 암호법"></a>3. 대칭키 암호법</h2><ul>
+<li>디지털 알고리즘은 인코딩 할 때와 디코딩 할 때 똑같은 키를 사용하므로 대칭키 암호라 불린다.</li>
+<li>발송자와 수신자 모두 통신을 위해 비밀 키를 똑같이 공유 할 필요가 있다.</li>
+<li>발송자는 메시지를 암호화 하고 그 결과인 암호문을 수신자에게 발송하기 위해 비밀키를 사용한다.</li>
+<li>수신자는 암호문을 받은 뒤 공유키를 사용하여 원래대로 복원하기 위해 해독 함수를 적용한다.</li>
+</ul>
+<h2 id="4-공개키-암호법"><a href="#4-공개키-암호법" class="headerlink" title="4. 공개키 암호법"></a>4. 공개키 암호법</h2><ul>
+<li>두 개의 비대칭 키로 하나는 인코딩시에 다른 하나는 디코딩시에 사용한다.</li>
+<li>호스트만이 개인 디코딩 키를 알고 있다.</li>
+</ul>
+<h3 id="4-1-RSA"><a href="#4-1-RSA" class="headerlink" title="4.1 RSA"></a>4.1 RSA</h3><ul>
+<li><p>공개키</p>
+</li>
+<li><p>가로채서 얻은 암호문의 일부(네트워크 스누핑해서 획득)</p>
+</li>
+<li><p>메시지와 그것을 암호화한 암호문</p>
+<p>  → 공개키 비대칭 암호는 위 항목들을 알아도 계산할 수 없다는 것을 확신시켜 줘야한다.</p>
+</li>
+<li><p>그 중 RSA는 공개키 암호 체계중 유명하며, 가장 상용화된 알고리즘이다.</p>
+</li>
+</ul>
+<h3 id="4-2-혼성-암호-체계와-세션-키"><a href="#4-2-혼성-암호-체계와-세션-키" class="headerlink" title="4.2 혼성 암호 체계와 세션 키"></a>4.2 혼성 암호 체계와 세션 키</h3><ul>
+<li>공개키 암호 방식의 알고리즘은 계산이 느린 경향이 있다.</li>
+<li>실제로는 대칭과 비대칭 방식을 섞은 것이 쓰인다.</li>
+</ul>
+<h2 id="5-디지털-서명"><a href="#5-디지털-서명" class="headerlink" title="5. 디지털 서명"></a>5. 디지털 서명</h2><ul>
+<li>메시지가 위조되지 않았음을 증명하기 위해 메시지에 서명을 하도록 한다.</li>
+<li>보안 인증서에 중요하다.</li>
+</ul>
+<h3 id="5-1-서명은-암호-체크섬"><a href="#5-1-서명은-암호-체크섬" class="headerlink" title="5.1 서명은 암호 체크섬"></a>5.1 서명은 암호 체크섬</h3><ul>
+<li>서명은 메시지를 작성한 저자가 누군지 알려준다.</li>
+<li>서명은 메시지 위조를 방지한다.</li>
+<li>디지털 서명은 보통 비대칭 공개키에 의해 생성된다.</li>
+<li>저자의 개인키는 <code>지문</code>처럼 사용된다.</li>
+</ul>
+<h2 id="6-디지털-인증서"><a href="#6-디지털-인증서" class="headerlink" title="6. 디지털 인증서"></a>6. 디지털 인증서</h2><p>신뢰할 수 있는 기관으로부터 보증 받은 사용자나 회사에 대한 정보를 담는다.</p>
+<h3 id="6-1-인증서의-내부"><a href="#6-1-인증서의-내부" class="headerlink" title="6.1 인증서의 내부"></a>6.1 인증서의 내부</h3><ul>
+<li>대상의 이름, 유효기간, 인증서 발급자, 디지털 서명과 같이 기본적인 것들을 담고 있다.</li>
+<li>누구나 디지털 인증서를 만들 수 있지만, 인증서의 정보를 보증하고 인증서를 개인 키로 서명할 수 있는 널리 인정받는 서명 권한을 얻을 수 있는 것은 아니다.</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-23T12:32:31+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at 2020년 2월 23일</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HTTP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>HTTP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/스터디/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>스터디</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://bebiangel.github.io/2019/12/01/http-guide-chap14/&title=HTTP 완벽가이드 14장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://bebiangel.github.io/2019/12/01/http-guide-chap14/&title=HTTP 완벽가이드 14장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://bebiangel.github.io/2019/12/01/http-guide-chap14/&title=HTTP 완벽가이드 14장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2020/01/05/http-guide-chap15/" rel="prev" title="HTTP 완벽가이드 15장">
+                                  
+                                      HTTP 완벽가이드 15장
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/11/24/http-guide-chap13/" rel="prev" title="HTTP 완벽가이드 13장">
+                                    
+                                        HTTP 완벽가이드 13장
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'HTTP 완벽가이드 14장',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/images/react.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:rossoneri1012@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/bebiangel"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;요약</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#14장-보안-HTTP"><span class="toc-text">14장 보안 HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-HTTP를-안전하게-만들기"><span class="toc-text">1. HTTP를 안전하게 만들기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-HTTPS"><span class="toc-text">1.1 HTTPS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-디지털-암호학"><span class="toc-text">2. 디지털 암호학</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-암호학-용어들"><span class="toc-text">2.1 암호학 용어들</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-암호-cipher"><span class="toc-text">2.2 암호(cipher)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-키가-있는-암호"><span class="toc-text">2.3 키가 있는 암호</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-디지털-암호"><span class="toc-text">2.4 디지털 암호</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-대칭키-암호법"><span class="toc-text">3. 대칭키 암호법</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-공개키-암호법"><span class="toc-text">4. 공개키 암호법</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-RSA"><span class="toc-text">4.1 RSA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-혼성-암호-체계와-세션-키"><span class="toc-text">4.2 혼성 암호 체계와 세션 키</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-디지털-서명"><span class="toc-text">5. 디지털 서명</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-서명은-암호-체크섬"><span class="toc-text">5.1 서명은 암호 체크섬</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-디지털-인증서"><span class="toc-text">6. 디지털 인증서</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-인증서의-내부"><span class="toc-text">6.1 인증서의 내부</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/스터디/" href="/categories/스터디/"><div class='name'>스터디</div><div class='badge'>(22)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/코드스피츠/" href="/categories/코드스피츠/"><div class='name'>코드스피츠</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/HTTP/" style="font-size: 24px; color: #555">HTTP</a> <a href="/tags/스터디/" style="font-size: 24px; color: #555">스터디</a> <a href="/tags/코드스피츠/" style="font-size: 14px; color: #999">코드스피츠</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:rossoneri1012@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/bebiangel"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!-- google tag manager-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145117498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145117498-1');
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

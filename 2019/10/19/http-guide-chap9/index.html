@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>HTTP 완벽가이드 9장 | 기록</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>기록하는 공간</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;전체
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/프론트/"
+            
+            
+            id="categories프론트">
+            <i class='fas fa-code-branch fa-fw'></i>&nbsp;프론트
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/categories/스터디/"
+            
+              rel="nofollow"
+            
+            
+            id="categories스터디">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;스터디
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          기록
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/프론트/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories프론트">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/스터디/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories스터디">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-grin fa-fw'></i>&nbsp;전체
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/프론트/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories프론트">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;프론트
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/스터디/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories스터디">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;스터디
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/10/19/http-guide-chap9/">
+        HTTP 완벽가이드 9장
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    <a href="http://bebiangel.github.io" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Jaewoo Han</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-19</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/스터디/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>스터디</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h1 id="9장-웹-로봇"><a href="#9장-웹-로봇" class="headerlink" title="9장 웹 로봇"></a>9장 웹 로봇</h1><h2 id="1-크롤러와-크롤링"><a href="#1-크롤러와-크롤링" class="headerlink" title="1. 크롤러와 크롤링"></a>1. 크롤러와 크롤링</h2><ul>
+<li><code>웹 크롤러</code>란? 웹페이지를 한 개 가져오고, 그 다음 그 페이지가 가리키는 모든 웹페이지를 가져오는 작업을 재귀적으로 반복하는 방식으로 웹을 순회하는 로봇이다.</li>
+<li>인터넷 검색엔진은 웹을 돌아다니면서 모든 문서를 끌어오기 위해 크롤러를 사용한다.</li>
+<li>사용자가 특정 단어로 검색을 할때, 가져와야 하는 페이지들이 수십억 개나 되므로, 검색엔진 로봇들은 가장 복잡한 로봇들중 하나가 되었다.</li>
+</ul>
+<h3 id="1-1-어디에서-시작하는가-‘루트-집합’"><a href="#1-1-어디에서-시작하는가-‘루트-집합’" class="headerlink" title="1.1 어디에서 시작하는가: ‘루트 집합’"></a>1.1 어디에서 시작하는가: ‘루트 집합’</h3><ul>
+<li>크롤러가 방문을 시작하는 URL들의 초기 집합을 <code>루트 집합</code>이라고 한다.</li>
+<li>모든 링크를 크롤링하면 관심있는 웹페이지들의 대부분을 가져오게 될 수 있도록 충분히 다른 장소에서 URL들을 선택해야 한다.</li>
+<li>일반적으로 좋은 루트 집합은 크고 인기 있는 웹 사이트, 새로 생성된 페이지들의 목록, 자주 링크되지 않는 잘 알려지 있지 않은 페이지들의 목록으로 구성된다.</li>
+</ul>
+<h3 id="1-2-링크-추출과-상대-링크-정상화"><a href="#1-2-링크-추출과-상대-링크-정상화" class="headerlink" title="1.2 링크 추출과 상대 링크 정상화"></a>1.2 링크 추출과 상대 링크 정상화</h3><ul>
+<li>크롤러는 검색한 각 페이지 안에서 크롤링할 URL 링크들을 추가한다.</li>
+<li>HTML 파싱을 해서 링크들을 추출하고 상대 링크를 절대 링크로 바꿔야 하낟.</li>
+</ul>
+<h3 id="1-3-루프와-중복"><a href="#1-3-루프와-중복" class="headerlink" title="1.3 루프와 중복"></a>1.3 루프와 중복</h3><ul>
+<li>순환은 크롤러를 루프에 빠뜨려서 빙빙 돌게 만들거나, 같은 페이지를 반복해서 가져오는데 시간을 허비하도록 만들 수 있다.</li>
+<li>같은 페이지를 반복해서 가져오면, 웹 서버에 부담이 가고, 웹 사이트를 압박하여 실제 사용자도 사이트에 접근할 수 없도록 막아버리게 만들 수 도 있다.</li>
+<li>크롤러는 루프 자체가 문제가 되지 않더라도, 많은 중복된 페이지들을 가져오게 되므로, 애플리케이션이 중복된 컨텐츠로 넘쳐나게 만들수 있다.</li>
+</ul>
+<h3 id="1-5-빵-부스러기의-흔적"><a href="#1-5-빵-부스러기의-흔적" class="headerlink" title="1.5 빵 부스러기의 흔적"></a>1.5 빵 부스러기의 흔적</h3><ul>
+<li>전 세계 웹 콘텐츠들을 크롤링하기 위해서는 빠른 속도가 중요하다.</li>
+<li>웹 크롤러들은 방문한 곳을 관리하기 위해 사용하는 유용한 기법들이 있다.</li>
+</ul>
+<p><code>트리와 해시 테이블</code></p>
+<ul>
+<li>복잡한 로봇들은 방문한 URL을 추적하기 위해 검색 트리나 해시 테이블을 사용한다.</li>
+</ul>
+<p><code>느슨한 존재 비트맵</code></p>
+<ul>
+<li>공간 사용을 최소화하기 위해 존재 비트 배열과 같은 느슨한 자료구조를 사용한다.</li>
+</ul>
+<p><code>체크포인트</code></p>
+<ul>
+<li>로봇 프로그램이 갑작스럽게 중단될 경우를 대비해, 방문한 URL의 목록이 디스크에 저장되었는지 확인한다.</li>
+</ul>
+<p><code>파티셔닝</code></p>
+<ul>
+<li>각각이 분리된 한 대의 컴퓨터인 로봇들이 동시에 일하고 있는 <code>농장(farm)</code>을 이용한다.</li>
+<li>각 로봇엔 URL들의 특정 <code>한 부분</code>이 할당되어 그에 대한 책임을 갖는다.</li>
+</ul>
+<h2 id="2-로봇의-HTTP"><a href="#2-로봇의-HTTP" class="headerlink" title="2. 로봇의 HTTP"></a>2. 로봇의 HTTP</h2><ul>
+<li>로봇들은 HTTP 요청을 만들고 스스로를 클라이언트로서 적절한 HTTP 요청 헤더를 사용해야 한다.</li>
+</ul>
+<h3 id="2-1-요청-헤더-식별하기"><a href="#2-1-요청-헤더-식별하기" class="headerlink" title="2.1 요청 헤더 식별하기"></a>2.1 요청 헤더 식별하기</h3><ul>
+<li>로봇 대부분은 약간의 신원 식별 헤더(능력, 신원, 출신)를 구현하고 전송한다.</li>
+<li>이 정보들은 크롤러의 소유자를 찾아낼 때와 서버에게 로봇이 어떤 종류의 콘텐츠를 다룰 수 있는지에 대한 약간의 정보를 주려 할 때 유용하다.</li>
+</ul>
+<p><strong>User-Agent</strong></p>
+<ul>
+<li>서버에게 요청을 만든 로봇의 이름</li>
+</ul>
+<p><strong>From</strong></p>
+<ul>
+<li>로봇의 사용자/관리자의 이메일 주소를 제공한다.</li>
+</ul>
+<p><strong>Accept</strong></p>
+<ul>
+<li>서버에게 어떤 미디어 타입을 보내도 되는지 말해준다.</li>
+</ul>
+<p><strong>Referer</strong></p>
+<ul>
+<li>현재의 요청 URL을 포함한 문서의 URL을 제공한다.</li>
+</ul>
+<h3 id="2-2-가상-호스팅"><a href="#2-2-가상-호스팅" class="headerlink" title="2.2 가상 호스팅"></a>2.2 가상 호스팅</h3><ul>
+<li>로봇은 Host 헤더를 지원해야 한다.</li>
+<li>요청에 Host 헤더를 포함 하지 않으면 로봇이 어떤 URL에 대해 잘못된 콘텐츠를 찾게된다.</li>
+</ul>
+<h3 id="2-3-조건부-요청"><a href="#2-3-조건부-요청" class="headerlink" title="2.3 조건부 요청"></a>2.3 조건부 요청</h3><ul>
+<li>수십억 개의 웹페이지를 다운 받을 수 도 있으므로, 콘텐츠가 변경되었을때만 가져오도록 하는 것이 효과적이다.</li>
+<li>시간이나 엔터티 태그를 비교함으로써 그들이 받아간 마지막 버전 이후에 업데이트 된 것이 있는지 알아보는 조건부 HTTP요청을 구현한다.</li>
+</ul>
+<h3 id="2-4-응답-다루기"><a href="#2-4-응답-다루기" class="headerlink" title="2.4 응답 다루기"></a>2.4 응답 다루기</h3><ul>
+<li>로봇들은 주 관심사가 단순히 GET 메서드로 콘텐츠를 요청해서 가져오는 것이므로 <code>응답다루기</code> 를 거의 하지 않는다.</li>
+<li>로봇들은 최소한 일반적인 <code>상태 코드</code>나 예상할 수 있는 <code>상태 코드</code>를 다룰 수 있어야한다.</li>
+<li>HTTP 헤더에 임베딩된 정보를 따라 로봇들은 엔터티 자체의 정보를 찾을 수 있다.</li>
+<li>메타 <code>http-equiv</code> 태그와 같은 메타 HTML 태그는 리소스에 대해 콘텐츠 저자가 포함시킨 정보다.</li>
+</ul>
+<h3 id="2-5-User-Agent-타기팅"><a href="#2-5-User-Agent-타기팅" class="headerlink" title="2.5 User-Agent 타기팅"></a>2.5 User-Agent 타기팅</h3><ul>
+<li>웹 사이트들은 그들의 여러 기능을 지원할 수 있도록 브라우저의 종류를 감지하여 그에 맞게 콘텐츠를 최적화한다.</li>
+<li>사이트는 로봇에게 콘텐츠 대신 에러 페이지를 제공한다.</li>
+</ul>
+<h2 id="3-부적절하게-동작하는-로봇들"><a href="#3-부적절하게-동작하는-로봇들" class="headerlink" title="3. 부적절하게 동작하는 로봇들"></a>3. 부적절하게 동작하는 로봇들</h2><p><strong>폭주하는 로봇</strong></p>
+<ul>
+<li>로봇이 논리적인 에러를 갖고 있거나 순환에 빠졌다면 웹 서버에 극심한 부하를 안겨준다.</li>
+<li>서버에 과부하를 유발하여 다른 누구에게도 서비스를 못하게 만드는 일이 발생할 수 있다.</li>
+</ul>
+<p><strong>오래된 URL</strong></p>
+<ul>
+<li>웹 사이트의 콘텐츠들이 많이 바뀌었다면, 로봇들은 존재하지 않은 URL에 대한 요청을 많이 보낼 수 있다.</li>
+<li>존재하지 않는 문서에 대한 접근 요청이나, 에러 페이지를 제공하는 부하로 인해 웹 서버의 수용 능력이 감소될 수 있다.</li>
+</ul>
+<p><strong>길고 잘못된 URL</strong></p>
+<ul>
+<li>웹 사이트에게 크고 의미 없는 URL을 요청한다면, 웹 서버의 처리 능력에 영향을 주고, 접근 로그를 어지럽게 채우게 된다.</li>
+</ul>
+<p><strong>호기심이 지나친 로봇</strong></p>
+<ul>
+<li>로봇들은 <code>사적인 데이터</code>에 대한 URL을 얻어 인터넷 검색엔진이나 기타 애플리케이션을 통해 쉽게 접근할 수 있도록 만들 수 있다.</li>
+<li>로봇들이 비밀번호 파일이나 신용카드 정보와 같이 민감한 데이터를 가져가는 것이 가능하다는 것을 사이트 구현자들이 인지해야 할 필요가 있다.</li>
+</ul>
+<p><strong>동적 게이트웨이 접근</strong></p>
+<ul>
+<li>로봇은 게이트웨이의 콘텐츠에 대한 URL로 요청을 할 수 있다.</li>
+<li>보통 특수 목적을 위한 경우이므로 처리 비용이 많이 든다.</li>
+</ul>
+<h2 id="4-로봇-차단하기"><a href="#4-로봇-차단하기" class="headerlink" title="4. 로봇 차단하기"></a>4. 로봇 차단하기</h2><ul>
+<li>robots.txt 는 로봇의 접근을 제어하는 정보를 저장하는 파일의 이름이다.</li>
+<li>어떤 로봇이 서버의 어떤 부분에 접근할 수 있는지에 대한 정보가 담겨있다.</li>
+<li>웹 사이트의 어떤 리소스에 접근하기 전에 해당 사이트의 robots.txt를 요청하고, 해당 사이트의 웹 페이지를 가져올  수 잇는 권한이 있는지 확인하고 페이지를 가져온다.</li>
+</ul>
+<h3 id="4-1-웹-사이트와-robots-txt-파일들"><a href="#4-1-웹-사이트와-robots-txt-파일들" class="headerlink" title="4.1 웹 사이트와 robots.txt 파일들"></a>4.1 웹 사이트와 robots.txt 파일들</h3><ul>
+<li>웹 사이트의 어떤 URL을 방문하기 전에, 해당 사이트에 robots.txt 파일이 존재한다면 로봇은 반드시 그 파일을 가져와서 처리해야 한다.</li>
+</ul>
+<h3 id="4-2-robots-txt-파일-포맷"><a href="#4-2-robots-txt-파일-포맷" class="headerlink" title="4.2 robots.txt 파일 포맷"></a>4.2 robots.txt 파일 포맷</h3><pre><code>User-Agent: Slurp
+User-Agent: webcrawler
+Disallow: /private
+
+User-Agent: *
+Disallow:</code></pre><ul>
+<li>각 레코드는 특정 로봇들의 집합에 대한 차단 규칙의 집합을 기술한다.</li>
+<li>각 레코드는 규칙 줄들의 집합으로 되어 있으며 빈 줄이나 파일 끝 문자로 끝난다.</li>
+</ul>
+<p><strong>User-Agent</strong></p>
+<ul>
+<li>로봇의 이름은 로봇의 HTTP GET 요청 안의 User-Agent헤더를 통해 보내진다.</li>
+<li>로봇이 자신의 이름에 대응하는 User-Agent줄을 찾지 못하였고 와일드 카드를 사용한 <code>User-Agent: *</code> 줄도 찾지 못했다면, 대응하는 레코드가 없는것이므로, 접근에는 어떤 제한도 없다.</li>
+</ul>
+<p><strong>Disallow &amp; Allow</strong></p>
+<ul>
+<li><p>User-Agent 줄 바로 다음에 온다.</p>
+</li>
+<li><p>특정 로봇에 대해 어떤 URL 경로가 명시적으로 금지되어 있고 명시적으로 허용되는지 기술한다.</p>
+<h2 id="5-검색엔진"><a href="#5-검색엔진" class="headerlink" title="5. 검색엔진"></a>5. 검색엔진</h2></li>
+<li><p>웹 로봇은 인터넷 검색엔진에서 사용자들이 어떠한 문서라도 찾을 수 있도록 도와준다.</p>
+</li>
+</ul>
+<h3 id="5-1-검색-과정"><a href="#5-1-검색-과정" class="headerlink" title="5.1 검색 과정"></a>5.1 검색 과정</h3><ul>
+<li>검색엔진들은 전 세계의 웹페이지들에 대해 <code>풀 텍스트 색인(full-text indexes)</code> 라고 하는 로컬 데이터베이스를 생성한다.</li>
+<li>검색엔진 크롤러들은 웹페이지들을 수집하여 풀 텍스트 색인에 추가한다.</li>
+<li>크롤링을 한 번 하는데 걸리는 시간이 상당한 데 비해 웹페이지륻은 매 순간 변화하기 때문에, 풀 텍스트 색인은 웹의 특정 순간에 대한 스냅숏에 불과하다.</li>
+<li>풀 텍스트 색인은 단어 하나를 입력받아 그 단어를 포함하고 있는 문서를 즉각 알려줄 수 있는 데이터베이스이다.</li>
+<li>사용자가 질의를 보내고나면 게이트웨이 프로그램은 웹 UI질의를 풀 텍스트 색인을 검색할 때 ㅅ용되는 표현식으로 변환한다.</li>
+<li>질의의 결과를 확인하기 위해 검색엔진이 색인을 한번 사용했다면, 게이트웨이 애플리케이션은 그 결과를 이용해 최종 사용자를 위한 결과 페이지를 즉석에서 만들어낸다.</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <hr>
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-23T12:32:31+09:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>last updated at 2020년 2월 23일</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/HTTP/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>HTTP</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/스터디/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>스터디</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://bebiangel.github.io/2019/10/19/http-guide-chap9/&title=HTTP 완벽가이드 9장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://bebiangel.github.io/2019/10/19/http-guide-chap9/&title=HTTP 완벽가이드 9장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://bebiangel.github.io/2019/10/19/http-guide-chap9/&title=HTTP 완벽가이드 9장 | 기록&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                            <h4>
+                                <a href="/2019/10/27/http-guide-chap10/" rel="prev" title="HTTP 완벽가이드 10장">
+                                  
+                                      HTTP 완벽가이드 10장
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/10/13/http-guide-chap8/" rel="prev" title="HTTP 완벽가이드 8장">
+                                    
+                                        HTTP 완벽가이드 8장
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/HTTP/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>HTTP</a> <a class="tag" href="/tags/스터디/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>스터디</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'HTTP 완벽가이드 9장',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+        
+          
+          
+            <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/images/react.png'/>
+      </div>
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:rossoneri1012@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/bebiangel"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;요약</div>
+  
+    <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#9장-웹-로봇"><span class="toc-text">9장 웹 로봇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-크롤러와-크롤링"><span class="toc-text">1. 크롤러와 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-어디에서-시작하는가-‘루트-집합’"><span class="toc-text">1.1 어디에서 시작하는가: ‘루트 집합’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-링크-추출과-상대-링크-정상화"><span class="toc-text">1.2 링크 추출과 상대 링크 정상화</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-루프와-중복"><span class="toc-text">1.3 루프와 중복</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-빵-부스러기의-흔적"><span class="toc-text">1.5 빵 부스러기의 흔적</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-로봇의-HTTP"><span class="toc-text">2. 로봇의 HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-요청-헤더-식별하기"><span class="toc-text">2.1 요청 헤더 식별하기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-가상-호스팅"><span class="toc-text">2.2 가상 호스팅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-조건부-요청"><span class="toc-text">2.3 조건부 요청</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-응답-다루기"><span class="toc-text">2.4 응답 다루기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-User-Agent-타기팅"><span class="toc-text">2.5 User-Agent 타기팅</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-부적절하게-동작하는-로봇들"><span class="toc-text">3. 부적절하게 동작하는 로봇들</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-로봇-차단하기"><span class="toc-text">4. 로봇 차단하기</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-웹-사이트와-robots-txt-파일들"><span class="toc-text">4.1 웹 사이트와 robots.txt 파일들</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-robots-txt-파일-포맷"><span class="toc-text">4.2 robots.txt 파일 포맷</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-검색엔진"><span class="toc-text">5. 검색엔진</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-검색-과정"><span class="toc-text">5.1 검색 과정</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/categories/"
+    title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/스터디/" href="/categories/스터디/"><div class='name'>스터디</div><div class='badge'>(22)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/코드스피츠/" href="/categories/코드스피츠/"><div class='name'>코드스피츠</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/blog/tags/"
+    title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/HTTP/" style="font-size: 24px; color: #555">HTTP</a> <a href="/tags/스터디/" style="font-size: 24px; color: #555">스터디</a> <a href="/tags/코드스피츠/" style="font-size: 14px; color: #999">코드스피츠</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:rossoneri1012@gmail.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/bebiangel"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+<!-- google tag manager-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145117498-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145117498-1');
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
