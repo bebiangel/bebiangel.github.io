@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html  lang="ko">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>HTTP 완벽가이드 18장 - 기록</title>
+
+
+    <meta name="description" content="18장 웹 호스팅 웹 호스팅의 가장 중요한 속성들과 그것들이 어떻게 HTTP 애플리케이션과 상호작용하는지 알아본다.  1. 호스팅 서비스 전문적으로 서버실을 짓고 도메인을 등록하고 네트워크 대역폭을 구매하는 기술과 시간을 가진 업체들이 있다. 물리적인 장비 관리에서 고객이 직접 콘텐츠를 제공할 수 있는 총체적인 웹 호스팅까지 다양한 종류의 서비스들이 있다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP 완벽가이드 18장">
+<meta property="og:url" content="http://bebiangel.github.io/2020/02/03/http-guide-chap18/index.html">
+<meta property="og:site_name" content="기록">
+<meta property="og:description" content="18장 웹 호스팅 웹 호스팅의 가장 중요한 속성들과 그것들이 어떻게 HTTP 애플리케이션과 상호작용하는지 알아본다.  1. 호스팅 서비스 전문적으로 서버실을 짓고 도메인을 등록하고 네트워크 대역폭을 구매하는 기술과 시간을 가진 업체들이 있다. 물리적인 장비 관리에서 고객이 직접 콘텐츠를 제공할 수 있는 총체적인 웹 호스팅까지 다양한 종류의 서비스들이 있다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="http://bebiangel.github.io/images/og_image.png">
+<meta property="article:published_time" content="2020-02-03T13:00:37.000Z">
+<meta property="article:modified_time" content="2020-02-27T05:33:31.376Z">
+<meta property="article:author" content="Jaewoo Han">
+<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="스터디">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://bebiangel.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/jeus.png" alt="HTTP 완벽가이드 18장" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/bebiangel">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-03T13:00:37.000Z">2020-02-03</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10분 읽기 (대략 1442 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                HTTP 완벽가이드 18장
+            
+        </h1>
+        <div class="content">
+            <h1 id="18장-웹-호스팅"><a href="#18장-웹-호스팅" class="headerlink" title="18장 웹 호스팅"></a>18장 웹 호스팅</h1><blockquote>
+<p>웹 호스팅의 가장 중요한 속성들과 그것들이 어떻게 HTTP 애플리케이션과 상호작용하는지 알아본다.</p>
+</blockquote>
+<h2 id="1-호스팅-서비스"><a href="#1-호스팅-서비스" class="headerlink" title="1. 호스팅 서비스"></a>1. 호스팅 서비스</h2><ul>
+<li>전문적으로 서버실을 짓고 도메인을 등록하고 네트워크 대역폭을 구매하는 기술과 시간을 가진 업체들이 있다.</li>
+<li>물리적인 장비 관리에서 고객이 직접 콘텐츠를 제공할 수 있는 총체적인 웹 호스팅까지 다양한 종류의 서비스들이 있다.</li>
+</ul>
+<h2 id="2-가상-호스팅"><a href="#2-가상-호스팅" class="headerlink" title="2. 가상 호스팅"></a>2. 가상 호스팅</h2><ul>
+<li>웹 호스팅 업자는 컴퓨터 한 대를 여러 고객이 공유하게 해서 저렴한 웹 호스팅 서비스를  제공하는데, 이를 <code>공유 호스팅</code> 또는 <code>가상 호스팅</code>이라 부른다.</li>
+<li>가상 호스팅은 비용, 공간, 관리에 이점이 있다.</li>
+<li>호스팅 업자는 복제 서버 더미(<code>서버 팜</code>)를 만들고 서버 팜에 부하를 분산할 수 있다.</li>
+<li>수많은 가상 웹사이트를 호스팅 하므로 관리자는 훨씬 편해진다.</li>
+</ul>
+<h3 id="2-1-호스트-정보가-없는-가상-서버-요청"><a href="#2-1-호스트-정보가-없는-가상-서버-요청" class="headerlink" title="2.1 호스트 정보가 없는 가상 서버 요청"></a>2.1 호스트 정보가 없는 가상 서버 요청</h3><ul>
+<li>HTTP/1.0 명세는 공용 웹 서버가 호스팅하고 있는 가상 웹 사이트에 누가 접근하고 있는지 식별하는 기능을 제공하지 않는다.</li>
+<li>여러 개의 요청이 완전히 다른 문서를 요청을 하더라도, 요청 자체가 똑같이 생겼다.</li>
+<li>HTTP 대리 서버(리버스 프락시)와 인터셉트 프락시는 어떤 사이트를 요청하는지에 관한 정보가 필요하다.</li>
+</ul>
+<h3 id="2-2-가상-호스팅-동작하게-하기"><a href="#2-2-가상-호스팅-동작하게-하기" class="headerlink" title="2.2 가상 호스팅 동작하게 하기"></a>2.2 가상 호스팅 동작하게 하기</h3><p><strong>URL 경로를 통한 가상 호스팅</strong></p>
+<ul>
+<li>서버가 어떤 사이트를 요청하는 것인지 알 수 있게 URL에 특별한 경로 컴포넌트를 추가한다.<ul>
+<li>경로에 있는 정보를 통해 해당 URL을 분석한다.</li>
+<li>GET <code>joes/index.html</code></li>
+<li>GET <code>mary/index.html</code></li>
+</ul>
+</li>
+<li>일반적으로, URL 기반의 가상 호스팅은 좋지 않은 방법이다.</li>
+</ul>
+<p><strong>포트 번호를 통한 가상 호스팅</strong></p>
+<ul>
+<li>각 사이트에 다른 포트번호를 할당하여, 분리된 웹 서버의 인스턴스 요청 처리를 한다.</li>
+<li>사용자는 URL에 비표준 포트를 쓰지 않고서도 리소스를 찾길 원하는 문제가 생긴다.</li>
+</ul>
+<p><strong>IP 주소를 통한 가상 호스팅</strong></p>
+<ul>
+<li><p>각 가상 웹 사이트에 유일한 IP 주소를 한 개 이상 부여한다.</p>
+</li>
+<li><p>모든 가상 서버의 IP 주소는 같은 공용 서버에 연결되어 있다.</p>
+<p>  <strong>문제점들</strong></p>
+<ul>
+<li>컴퓨터 시스템이 연결할 수 있는 장비의 IP의 개수에 제한이 있다.</li>
+<li>가상 사이트를 많이 가지고 있는 호스팅 업자는 호스팅 하는 모든 웹 사이트에 할당할 가상 IP 주소를 충분히 얻지 못할 수 있다.</li>
+<li>부하 균형의 구조상, 용량을 늘리기 위해 서버를 복제하면서, 각 복제된 서버에 IP 주소를 부여해야 하므로 IP 주소는 복제 서버의 개수만큼 더 필요하게 된다.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Host 헤더를 통한 가상 호스팅</strong></p>
+<ul>
+<li>모든 요청에 호스트명을 Host 확장 헤더에 기술해서 전달한다.</li>
+</ul>
+<h3 id="2-3-HTTP-1-1-Host-헤더"><a href="#2-3-HTTP-1-1-Host-헤더" class="headerlink" title="2.3 HTTP/1.1 Host 헤더"></a>2.3 HTTP/1.1 Host 헤더</h3><ul>
+<li>가상 서버는 매우 흔하기 때문에 대부분의 HTTP 클라이언트가 HTTP/1.1과 호환되지 않더라도, Host헤더는 구현한다.</li>
+<li><code>Host = &quot;Host&quot; &quot;:&quot; 호스트[ &quot;:&quot; 포트 ]</code></li>
+</ul>
+<h2 id="3-안정적인-웹-사이트-만들기"><a href="#3-안정적인-웹-사이트-만들기" class="headerlink" title="3. 안정적인 웹 사이트 만들기"></a>3. 안정적인 웹 사이트 만들기</h2><h3 id="3-1-미러링-된-서버-팜"><a href="#3-1-미러링-된-서버-팜" class="headerlink" title="3.1 미러링 된 서버 팜"></a>3.1 미러링 된 서버 팜</h3><ul>
+<li>서버 팜은 서로 대신할 수 있고 식별할 수 있게 설정된 웹 서버들의 집합이다.</li>
+<li>서버팜의 서버에 있는 콘텐츠들은 한 곳에 문제가 생기면 다른 한 곳에서 대신 전달할 수 있게 미러링 할 수 있다.</li>
+</ul>
+<p><strong>HTTP 리다이렉션</strong></p>
+<ul>
+<li>콘텐츠에 대한 URL은 마스터 서버의 IP를 가리키고, 마스터 서버는 요청을 받는 즉시 복제 서버로 리다이렉트시킨다.</li>
+</ul>
+<p><strong>DNS 리다이렉션</strong></p>
+<ul>
+<li>콘텐츠의 URL은 여러 개의 IP 주소를 가리킬 수 있고, DNS 서버는 클라이언트에게 전송할 IP 주소를 선택할 수 있다.</li>
+</ul>
+<h3 id="3-2-콘텐츠-분산-네트워크"><a href="#3-2-콘텐츠-분산-네트워크" class="headerlink" title="3.2 콘텐츠 분산 네트워크"></a>3.2 콘텐츠 분산 네트워크</h3><ul>
+<li>콘텐츠 분산 네트워크(CDN)는 특정 콘텐츠의 분산을 목적으로 하는 단순한 네트워크이다.</li>
+</ul>
+<h3 id="3-3-CDN의-대리-캐시"><a href="#3-3-CDN의-대리-캐시" class="headerlink" title="3.3 CDN의 대리 캐시"></a>3.3 CDN의 대리 캐시</h3><ul>
+<li>대리 서버는 콘텐츠에 대한 요청을 받는다.</li>
+<li>원 서버 집합을 대신해 요청을 받는다.</li>
+</ul>
+<p><strong>미러링 된 서버와의 차이점</strong></p>
+<ul>
+<li>수요에 따라서 동작한다.</li>
+<li>원 서버의 전체 콘텐츠를 복사하지 않는다.</li>
+<li>클라이언트가 요청하는 콘텐츠만 저장한다.</li>
+</ul>
+<h3 id="3-4-CDN의-프락시-캐시"><a href="#3-4-CDN의-프락시-캐시" class="headerlink" title="3.4 CDN의 프락시 캐시"></a>3.4 CDN의 프락시 캐시</h3><ul>
+<li>대리 서버를 사용하면, 프락시 캐시의 콘텐츠는 요청이 있을 때만 저장되고 원본 서버 콘텐츠를 정확히 복제한다는 보장이 없다.</li>
+<li>요청이 있을 때만 저장하는 프락시 캐시는 <code>스위치</code> 혹은 <code>라우터</code>가 중간에서 웹 트래픽을 가로채 처리한다.</li>
+</ul>
+<h2 id="4-웹-사이트-빠르게-만들기"><a href="#4-웹-사이트-빠르게-만들기" class="headerlink" title="4. 웹 사이트 빠르게 만들기"></a>4. 웹 사이트 빠르게 만들기</h2><ul>
+<li>콘텐츠를 분산시키면, 그 콘텐츠를 사용자에게 더 가깝게 만들어 주므로 콘텐츠를 서버에서 클라이언트로 전송하는 시간이 단축된다.</li>
+<li>콘텐츠를 인코딩하는것</li>
+</ul>
+<h2 id="5-WebDav"><a href="#5-WebDav" class="headerlink" title="5. WebDav"></a>5. WebDav</h2><ul>
+<li>웹 분산 저작과 버저닝(Web Distributed Authoring and Versioning)</li>
+<li>공동 저작에 적합한 플랫폼을 제공하려고 HTTP를 확장하는데 집중한다.</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/HTTP/" rel="tag">HTTP</a>, <a class="has-link-grey -link" href="/tags/%EC%8A%A4%ED%84%B0%EB%94%94/" rel="tag">스터디</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/10/http-guide-chap19/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">HTTP 완벽가이드 19장</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/19/http-guide-chap17/">
+                <span class="level-item">HTTP 완벽가이드 17장</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://EXAMPLE.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>                       
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/profile.jpeg" alt="Jeus.Han">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Jeus.Han
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Developer, Crossfit
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            25
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/bebiangel" target="_blank" rel="noopener">
+                팔로우</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/bebiangel">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com/jeus_han">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    카탈로그
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#18장-웹-호스팅">
+        <span class="has-mr-6">1</span>
+        <span>18장 웹 호스팅</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-호스팅-서비스">
+        <span class="has-mr-6">1.1</span>
+        <span>1. 호스팅 서비스</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-가상-호스팅">
+        <span class="has-mr-6">1.2</span>
+        <span>2. 가상 호스팅</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-1-호스트-정보가-없는-가상-서버-요청">
+        <span class="has-mr-6">1.2.1</span>
+        <span>2.1 호스트 정보가 없는 가상 서버 요청</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-가상-호스팅-동작하게-하기">
+        <span class="has-mr-6">1.2.2</span>
+        <span>2.2 가상 호스팅 동작하게 하기</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-HTTP-1-1-Host-헤더">
+        <span class="has-mr-6">1.2.3</span>
+        <span>2.3 HTTP/1.1 Host 헤더</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#3-안정적인-웹-사이트-만들기">
+        <span class="has-mr-6">1.3</span>
+        <span>3. 안정적인 웹 사이트 만들기</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#3-1-미러링-된-서버-팜">
+        <span class="has-mr-6">1.3.1</span>
+        <span>3.1 미러링 된 서버 팜</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-2-콘텐츠-분산-네트워크">
+        <span class="has-mr-6">1.3.2</span>
+        <span>3.2 콘텐츠 분산 네트워크</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-3-CDN의-대리-캐시">
+        <span class="has-mr-6">1.3.3</span>
+        <span>3.3 CDN의 대리 캐시</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-4-CDN의-프락시-캐시">
+        <span class="has-mr-6">1.3.4</span>
+        <span>3.4 CDN의 프락시 캐시</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#4-웹-사이트-빠르게-만들기">
+        <span class="has-mr-6">1.4</span>
+        <span>4. 웹 사이트 빠르게 만들기</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-WebDav">
+        <span class="has-mr-6">1.5</span>
+        <span>5. WebDav</span>
+        </a></li></ul></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/JavaScript/">
+            <span class="level-start">
+                <span class="level-item">JavaScript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%EC%83%9D%EA%B0%81/">
+            <span class="level-start">
+                <span class="level-item">생각</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">
+            <span class="level-start">
+                <span class="level-item">스터디</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">22</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0/">
+            <span class="level-start">
+                <span class="level-item">코드스피츠</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/HTTP/" style="font-size: 20px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/%EC%83%9D%EA%B0%81/" style="font-size: 10px;">생각</a> <a href="/tags/%EC%8A%A4%ED%84%B0%EB%94%94/" style="font-size: 20px;">스터디</a> <a href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/" style="font-size: 10px;">자바스크립트</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0/" style="font-size: 10px;">코드스피츠</a> <a href="/tags/%ED%87%B4%EC%82%AC/" style="font-size: 10px;">퇴사</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/11/javascript-this/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="자바스크립트 this">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-11T11:51:00.000Z">2020-04-11</time></div>
+                    <a href="/2020/04/11/javascript-this/" class="title has-link-black-ter is-size-6 has-text-weight-normal">자바스크립트 this</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/17/my-think-01/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="퇴사를 했다.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T05:15:56.000Z">2020-03-17</time></div>
+                    <a href="/2020/03/17/my-think-01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">퇴사를 했다.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%83%9D%EA%B0%81/">생각</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/23/http-guide-chap21/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP 완벽가이드 21장">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-23T03:37:07.000Z">2020-02-23</time></div>
+                    <a href="/2020/02/23/http-guide-chap21/" class="title has-link-black-ter is-size-6 has-text-weight-normal">HTTP 완벽가이드 21장</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/10/http-guide-chap20/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP 완벽가이드 20장">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-10T10:55:55.000Z">2020-02-10</time></div>
+                    <a href="/2020/02/10/http-guide-chap20/" class="title has-link-black-ter is-size-6 has-text-weight-normal">HTTP 완벽가이드 20장</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/10/http-guide-chap19/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP 완벽가이드 19장">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-10T10:55:52.000Z">2020-02-10</time></div>
+                    <a href="/2020/02/10/http-guide-chap19/" class="title has-link-black-ter is-size-6 has-text-weight-normal">HTTP 완벽가이드 19장</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">9월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTTP/">
+                        <span class="tag">HTTP</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/this/">
+                        <span class="tag">this</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%83%9D%EA%B0%81/">
+                        <span class="tag">생각</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%8A%A4%ED%84%B0%EB%94%94/">
+                        <span class="tag">스터디</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/">
+                        <span class="tag">자바스크립트</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0/">
+                        <span class="tag">코드스피츠</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%ED%87%B4%EC%82%AC/">
+                        <span class="tag">퇴사</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/11/javascript-this/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="자바스크립트 this">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-11T11:51:00.000Z">2020-04-11</time></div>
+                    <a href="/2020/04/11/javascript-this/" class="title has-link-black-ter is-size-6 has-text-weight-normal">자바스크립트 this</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/03/17/my-think-01/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="퇴사를 했다.">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-17T05:15:56.000Z">2020-03-17</time></div>
+                    <a href="/2020/03/17/my-think-01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">퇴사를 했다.</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%83%9D%EA%B0%81/">생각</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/23/http-guide-chap21/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP 완벽가이드 21장">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-23T03:37:07.000Z">2020-02-23</time></div>
+                    <a href="/2020/02/23/http-guide-chap21/" class="title has-link-black-ter is-size-6 has-text-weight-normal">HTTP 완벽가이드 21장</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/10/http-guide-chap20/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP 완벽가이드 20장">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-10T10:55:55.000Z">2020-02-10</time></div>
+                    <a href="/2020/02/10/http-guide-chap20/" class="title has-link-black-ter is-size-6 has-text-weight-normal">HTTP 완벽가이드 20장</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/10/http-guide-chap19/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP 완벽가이드 19장">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-10T10:55:52.000Z">2020-02-10</time></div>
+                    <a href="/2020/02/10/http-guide-chap19/" class="title has-link-black-ter is-size-6 has-text-weight-normal">HTTP 완벽가이드 19장</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%8A%A4%ED%84%B0%EB%94%94/">스터디</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">2월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">1월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">12월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">11월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">10월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">9월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">8월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/HTTP/">
+                        <span class="tag">HTTP</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/JavaScript/">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/this/">
+                        <span class="tag">this</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%83%9D%EA%B0%81/">
+                        <span class="tag">생각</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%8A%A4%ED%84%B0%EB%94%94/">
+                        <span class="tag">스터디</span>
+                        <span class="tag is-grey">22</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/">
+                        <span class="tag">자바스크립트</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%BD%94%EB%93%9C%EC%8A%A4%ED%94%BC%EC%B8%A0/">
+                        <span class="tag">코드스피츠</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%ED%87%B4%EC%82%AC/">
+                        <span class="tag">퇴사</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/jeus.png" alt="HTTP 완벽가이드 18장" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Jaewoo Han&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://bebiangel.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
